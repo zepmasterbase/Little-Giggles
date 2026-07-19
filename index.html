@@ -1,100 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Little Giggles V800 Ultimate</title>
+<title>Little Giggles Version 1.0</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
 <style>
-:root{
---sky1:#7de5ff;--sky2:#8d84ff;--sky3:#87eea2;
---glass:rgba(255,255,255,.16);--line:rgba(255,255,255,.28);
---pink:#ff66ca;--gold:#ffd95d;
-}
+:root{--glass:rgba(255,255,255,.16);--line:rgba(255,255,255,.28);--pink:#ff62c8;--gold:#ffd95d}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-font-family:Poppins,sans-serif;
-background:linear-gradient(180deg,var(--sky1),var(--sky2) 45%,var(--sky3));
-color:#fff;overflow-x:hidden;
-}
-body::before{
-content:"";position:fixed;inset:0;pointer-events:none;
-background:
-radial-gradient(circle at 15% 15%,rgba(255,255,255,.22),transparent 18%),
-radial-gradient(circle at 85% 20%,rgba(255,255,255,.16),transparent 20%);
-animation:floatbg 18s ease-in-out infinite alternate;
-}
-@keyframes floatbg{to{transform:translateY(-20px)}}
-header{
-position:fixed;top:14px;left:50%;transform:translateX(-50%);
-width:min(1280px,95%);
-display:flex;justify-content:space-between;align-items:center;
-padding:12px 22px;
-background:var(--glass);
-backdrop-filter:blur(18px);
-border:1px solid var(--line);
-border-radius:999px;
-z-index:10;
-}
-.logo{font:700 1.7rem Fredoka,sans-serif}
-nav{display:flex;gap:18px}
-nav a{text-decoration:none;color:#fff;font-weight:600}
-.btn{
-display:inline-block;padding:15px 28px;border-radius:999px;
-background:linear-gradient(90deg,var(--pink),var(--gold));
-color:#222;text-decoration:none;font-weight:700;
-box-shadow:0 0 28px rgba(255,217,93,.7)
-}
-.hero{
-min-height:100vh;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:48px;
-align-items:center;
-padding:120px 6% 70px;
-}
-.hero h1{font:700 clamp(3rem,6vw,5.8rem) Fredoka,sans-serif;line-height:1.02}
-.hero p{margin:24px 0 34px;font-size:1.1rem;max-width:580px}
-.panel{
-background:var(--glass);
-border:1px solid var(--line);
-border-radius:34px;
-padding:18px;
-backdrop-filter:blur(18px);
-}
-.characters{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.characters img{width:100%;border-radius:22px;animation:bob 5s ease-in-out infinite}
-.characters img:nth-child(2){animation-delay:1s}
-.characters img:nth-child(3){animation-delay:2s}
-.characters img:nth-child(4){animation-delay:3s}
-@keyframes bob{50%{transform:translateY(-10px)}}
-section{padding:90px 6%}
-.title{text-align:center;font:700 2.5rem Fredoka,sans-serif;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
-.card{
-background:var(--glass);
-border:1px solid var(--line);
-backdrop-filter:blur(18px);
-border-radius:28px;
-padding:24px;
-text-align:center;
-transition:.3s}
-.card:hover{transform:translateY(-8px)}
-footer{
-padding:55px 20px;
-text-align:center;
-background:rgba(255,255,255,.12);
-border-top:1px solid var(--line);
-backdrop-filter:blur(18px)}
-.links,.social{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin:20px 0}
-.links a,.social a{color:#fff;text-decoration:none}
-.social a{
-width:56px;height:56px;border-radius:50%;
-display:flex;align-items:center;justify-content:center;
-background:rgba(255,255,255,.16);
-border:1px solid var(--line);
-font-size:26px}
+body{font-family:Poppins,sans-serif;background:linear-gradient(180deg,#7ee4ff,#8c84ff 45%,#8aeda2);color:#fff}
+header{position:sticky;top:0;margin:12px auto;width:min(1280px,95%);display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-radius:999px;background:var(--glass);backdrop-filter:blur(18px);border:1px solid var(--line)}
+nav a{color:#fff;text-decoration:none;margin:0 10px}
+.logo{font:700 1.6rem Fredoka,sans-serif}
+.btn{display:inline-block;background:linear-gradient(90deg,var(--pink),var(--gold));padding:14px 24px;border-radius:999px;color:#222;text-decoration:none;font-weight:700}
+.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:60px 5%}
+.hero h1{font:700 clamp(2.8rem,6vw,5.2rem) Fredoka,sans-serif}
+.hero img{width:100%;border-radius:24px;background:rgba(255,255,255,.15)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:0 5% 60px}
+.card{background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(16px);padding:22px;border-radius:24px;text-align:center}
+.claim{max-width:700px;margin:0 auto 60px;background:var(--glass);padding:30px;border-radius:24px;border:1px solid var(--line)}
+.claim input{width:100%;padding:14px;border:none;border-radius:12px;margin:10px 0}
+.claim button{width:100%;padding:15px;border:none;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--gold));font-weight:700;cursor:pointer}
+#msg{display:none;margin-top:18px;padding:14px;border-radius:12px;background:#ffffff22}
+footer{padding:50px 20px;text-align:center;background:#ffffff18}
+.social{display:flex;justify-content:center;gap:18px;margin:20px 0}
+.social a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#ffffff22;color:#fff}
 @media(max-width:900px){.hero{grid-template-columns:1fr}nav{display:none}}
 </style>
 </head>
@@ -102,53 +34,61 @@ font-size:26px}
 <header>
 <div class="logo">🌈 Little Giggles</div>
 <nav>
-<a href="#">Home</a><a href="#">Stories</a><a href="#">Songs</a><a href="#">Games</a><a href="#">Characters</a><a href="#">Parents</a>
+<a href="#">Home</a><a href="#">Stories</a><a href="#">Songs</a><a href="#">Games</a><a href="#">Parents</a><a href="#">Sticker Club</a>
 </nav>
-<a class="btn" href="#">🎁 FREE Stickers</a>
+<a class="btn" href="#claim">FREE Stickers</a>
 </header>
 
 <section class="hero">
 <div>
 <h1>Welcome to Little Giggles Land</h1>
-<p>A joyful world of stories, songs, games, creativity and imagination featuring Bella Bunny, Benny Bear, Coco Crocodile and Millie Mouse.</p>
-<a class="btn" href="#">✨ Start the Adventure</a>
+<p>Learn, play, sing and explore magical adventures with Bella Bunny, Benny Bear, Coco Crocodile and Millie Mouse.</p><br>
+<a class="btn" href="#claim">Claim Free Sticker Pack</a>
 </div>
-<div class="panel">
-<div class="characters">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png" alt="Bella Bunny">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png" alt="Benny Bear">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png" alt="Coco Crocodile">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png" alt="Millie Mouse">
-</div>
+<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png">
 </div>
 </section>
 
-<section>
-<div class="title">Explore Little Giggles Land</div>
-<div class="grid">
+<section class="grid">
 <div class="card">🏰<h3>Giggle Castle</h3></div>
 <div class="card">📖<h3>Story Tree</h3></div>
 <div class="card">🎵<h3>Music Meadow</h3></div>
 <div class="card">🎨<h3>Creative Garden</h3></div>
 <div class="card">🚂<h3>Singing Train</h3></div>
 <div class="card">🌋<h3>Bubble Volcano</h3></div>
-<div class="card">⭐<h3>Rewards</h3></div>
-<div class="card">🎁<h3>Sticker Club</h3></div>
-</div>
+</section>
+
+<section id="claim" class="claim">
+<h2 style="font-family:Fredoka,sans-serif;text-align:center">🎁 Claim Your FREE Sticker Pack</h2><br>
+<input id="parent" placeholder="Parent Name">
+<input id="child" placeholder="Child's First Name">
+<input id="email" type="email" placeholder="Parent Email">
+<button onclick="claim()">Claim My Free Stickers</button>
+<div id="msg">🎉 Thank you! Your free Little Giggles Sticker Pack has been reserved. Connect this form to Supabase or Firebase to deliver downloads automatically.</div>
 </section>
 
 <footer>
 <h2 style="font-family:Fredoka,sans-serif">🌈 Little Giggles</h2>
 <p>Learn • Play • Laugh • Grow</p>
-<div class="links">
-<a href="#">Home</a><a href="#">Stories</a><a href="#">Songs</a><a href="#">Games</a><a href="#">Parents</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a>
-</div>
 <div class="social">
-<a href="https://www.tiktok.com/@little.giggles.tv4?_r=1&_t=ZS-989szt3VZWn" target="_blank">🎵</a>
-<a href="https://www.facebook.com/share/1BbVb7brhg/" target="_blank">📘</a>
-<a href="https://www.instagram.com/gigglewithbunny?igsh=c3NjcjFkc2Fwc3lj" target="_blank">📷</a>
+<a href="https://www.tiktok.com/@little.giggles.tv4?_r=1&_t=ZS-989szt3VZWn" target="_blank"><i data-lucide="music-4"></i></a>
+<a href="https://www.facebook.com/share/1BbVb7brhg/" target="_blank"><i data-lucide="facebook"></i></a>
+<a href="https://www.instagram.com/gigglewithbunny?igsh=c3NjcjFkc2Fwc3lj" target="_blank"><i data-lucide="instagram"></i></a>
 </div>
 <p>© 2026 Little Giggles. All Rights Reserved.</p>
 </footer>
+
+<script>
+lucide.createIcons();
+function claim(){
+const p=parent.value.trim(),c=child.value.trim(),e=email.value.trim();
+if(!p||!c||!e){alert("Please complete all fields.");return;}
+msg.style.display="block";
+}
+</script>
 </body>
 </html>
