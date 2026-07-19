@@ -1,159 +1,161 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Little Giggles | Learn • Play • Laugh • Grow</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<title>Little Giggles</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{
---bg:#07111f;--card:rgba(255,255,255,.10);--text:#fff;
---accent:#ffd84d;--pink:#ff6ec7;--cyan:#70e8ff;
-}
 *{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
-font-family:Poppins,sans-serif;color:var(--text);overflow-x:hidden;
+font-family:Poppins,sans-serif;
+background:linear-gradient(180deg,#6fd6ff,#8d7dff 45%,#5edb88);
+min-height:100vh;color:#fff;overflow-x:hidden}
+body:before{
+content:"";position:fixed;inset:0;
 background:
-radial-gradient(circle at 20% 20%,rgba(255,110,199,.25),transparent 35%),
-radial-gradient(circle at 80% 20%,rgba(112,232,255,.20),transparent 35%),
-linear-gradient(160deg,#06101c,#0d1c39,#132957);
+radial-gradient(circle at 20% 20%,rgba(255,255,255,.18),transparent 20%),
+radial-gradient(circle at 80% 30%,rgba(255,255,255,.12),transparent 20%);
+pointer-events:none}
+.header-wrap{
+position:fixed;top:18px;left:50%;transform:translateX(-50%);
+width:min(1180px,94%);
+z-index:100}
+header{
+display:flex;align-items:center;justify-content:space-between;
+padding:10px 18px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.25);
+border-radius:999px;
+box-shadow:0 0 25px rgba(255,255,255,.15);
 }
-.stars,.stars:after{
-position:fixed;inset:0;pointer-events:none;content:"";
-background-image:radial-gradient(#fff 1px,transparent 1px);
-background-size:42px 42px;opacity:.22;animation:drift 70s linear infinite;
-}
-.stars:after{transform:scale(1.5);opacity:.12}
-@keyframes drift{to{transform:translateY(200px)}}
-nav{position:fixed;top:0;width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 6%;
-backdrop-filter:blur(16px);background:rgba(6,12,22,.45);z-index:10}
-.logo{font-weight:800;font-size:1.8rem;color:var(--accent)}
-nav a{color:#fff;text-decoration:none;margin-left:20px;font-weight:500}
-.btn{
-display:inline-block;padding:15px 28px;border-radius:999px;
-background:linear-gradient(90deg,var(--pink),#ffbf47);
-color:#111;font-weight:700;text-decoration:none;
-box-shadow:0 10px 30px rgba(255,110,199,.35)
-}
-.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;padding:120px 6% 60px;gap:40px}
-h1{font-size:4.2rem;line-height:1.05;margin-bottom:18px}
-.hero p{font-size:1.15rem;max-width:620px;color:#eef}
-.badges{display:flex;gap:10px;flex-wrap:wrap;margin:24px 0}
-.badge{padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.12)}
-.scene{
-height:560px;border-radius:36px;position:relative;overflow:hidden;
-background:linear-gradient(#7ad8ff,#8d7dff 45%,#53d779);
-box-shadow:0 30px 80px rgba(0,0,0,.35)
-}
-.rainbow{position:absolute;width:110%;height:110%;left:-5%;top:-30%;
-background:radial-gradient(circle at center,transparent 53%,rgba(255,0,0,.55)54%,rgba(255,165,0,.55)58%,rgba(255,255,0,.55)62%,rgba(0,255,0,.5)66%,rgba(0,180,255,.5)70%,rgba(140,0,255,.45)74%,transparent 75%)}
-.cloud{position:absolute;background:#fff;border-radius:50px}
-.c1{width:170px;height:60px;top:80px;left:60px}
-.c2{width:130px;height:50px;top:130px;right:50px}
-.characters{position:absolute;bottom:25px;left:0;right:0;display:flex;justify-content:space-evenly;font-size:5rem}
-.float{animation:float 3s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-12px)}}
-section{padding:90px 6%}
-h2{font-size:2.2rem;margin-bottom:20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-.card{
-background:var(--card);backdrop-filter:blur(18px);
-padding:26px;border-radius:24px;border:1px solid rgba(255,255,255,.12);
-transition:.3s}
-.card:hover{transform:translateY(-8px)}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{
+width:48px;height:48px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+background:linear-gradient(135deg,#ff7bd5,#ffe56b,#72efff);
+font-size:26px;
+box-shadow:0 0 18px rgba(255,255,255,.45)}
+.brand h1{font-size:1.15rem;line-height:1}
+.brand span{display:block;font-size:.72rem;opacity:.9;font-weight:500}
+nav{display:flex;gap:26px}
+nav a{color:#fff;text-decoration:none;font-weight:600}
 .cta{
-background:linear-gradient(135deg,#ff74cc,#78ecff);
-padding:60px;border-radius:32px;text-align:center;color:#111}
+text-decoration:none;
+padding:12px 22px;
+border-radius:999px;
+font-weight:800;
+background:linear-gradient(90deg,#ff6fcf,#ffd85a);
+color:#141414;
+animation:pulse 2s infinite;
+box-shadow:0 0 20px rgba(255,214,90,.55)}
+@keyframes pulse{
+0%,100%{transform:scale(1);box-shadow:0 0 18px rgba(255,214,90,.45)}
+50%{transform:scale(1.05);box-shadow:0 0 35px rgba(255,214,90,.85)}
+}
+.hero{
+padding:150px 8% 80px;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:40px;align-items:center}
+.hero h2{font-size:4rem;line-height:1.05;margin-bottom:20px}
+.hero p{font-size:1.2rem;max-width:620px}
+.buttons{margin-top:35px;display:flex;gap:18px;flex-wrap:wrap}
+.btn{
+padding:16px 28px;border-radius:999px;text-decoration:none;font-weight:700}
+.primary{background:#fff;color:#111}
+.secondary{border:2px solid rgba(255,255,255,.5);color:#fff}
+.scene{
+height:560px;border-radius:40px;
+background:linear-gradient(#7bdcff,#8b7cff,#63df8f);
+position:relative;overflow:hidden;
+box-shadow:0 30px 70px rgba(0,0,0,.25)}
+.rainbow{
+position:absolute;left:-5%;top:-25%;width:110%;height:110%;
+background:radial-gradient(circle,transparent 54%,rgba(255,0,0,.45)55%,rgba(255,165,0,.45)59%,rgba(255,255,0,.45)63%,rgba(0,255,0,.45)67%,rgba(0,170,255,.45)71%,rgba(140,0,255,.45)75%,transparent 76%)}
+.cast{position:absolute;bottom:30px;width:100%;display:flex;justify-content:space-evenly;font-size:5rem}
+.cast div{animation:float 3s ease-in-out infinite}
+.cast div:nth-child(2){animation-delay:.4s}
+.cast div:nth-child(3){animation-delay:.8s}
+.cast div:nth-child(4){animation-delay:1.2s}
+@keyframes float{50%{transform:translateY(-14px)}}
+section{padding:80px 8%}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.card{
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(12px);
+padding:24px;border-radius:24px}
+.ctabox{
+background:#fff;color:#222;border-radius:30px;padding:55px;text-align:center}
 input{
-width:100%;padding:15px;border:none;border-radius:14px;margin:10px 0;
-font:inherit}
-.form{max-width:450px;margin:24px auto}
-footer{padding:40px;text-align:center;color:#d7d7d7}
+width:100%;max-width:420px;padding:15px;border-radius:14px;border:none;margin:10px auto;display:block}
+.footer{text-align:center;padding:40px}
 @media(max-width:900px){
 .hero{grid-template-columns:1fr}
-.scene{height:380px}
-h1{font-size:2.8rem}
-.characters{font-size:3.2rem}
+.hero h2{font-size:2.7rem}
+.scene{height:360px}
+nav{display:none}
 }
 </style>
 </head>
 <body>
-<div class="stars"></div>
-
-<nav>
-<div class="logo">🌈 Little Giggles</div>
+<div class="header-wrap">
+<header>
+<div class="brand">
+<div class="logo">🌈</div>
 <div>
+<h1>Little Giggles</h1>
+<span>Learn • Play • Laugh • Grow</span>
+</div>
+</div>
+<nav>
 <a href="#">Stories</a>
-<a href="#">Songs</a>
 <a href="#">Games</a>
 <a href="#">Parents</a>
-<a class="btn" href="#club">Free Stickers</a>
-</div>
 </nav>
+<a class="cta" href="#stickers">🎁 FREE Stickers</a>
+</header>
+</div>
 
-<section class="hero">
+<div class="hero">
 <div>
-<h1>Every Day Begins<br>with a Little Giggle.</h1>
-<p>Interactive stories, songs, games and creative adventures that help children aged 3–8 learn through play while giving parents a safe place they can trust.</p>
-<div class="badges">
-<div class="badge">📚 Stories</div>
-<div class="badge">🎵 Songs</div>
-<div class="badge">🎮 Games</div>
-<div class="badge">🎨 Creativity</div>
+<h2>Every Day Begins With A Little Giggle.</h2>
+<p>Interactive stories, songs, games and creativity for children aged 3–8. Safe, joyful learning designed for families.</p>
+<div class="buttons">
+<a class="btn primary" href="#stickers">Download FREE Sticker Pack</a>
+<a class="btn secondary" href="#">Watch Demo</a>
 </div>
-<p style="margin-top:25px">
-<a class="btn" href="#club">🎁 Download FREE Sticker Pack</a>
-</p>
 </div>
-
 <div class="scene">
 <div class="rainbow"></div>
-<div class="cloud c1"></div>
-<div class="cloud c2"></div>
-<div class="characters">
-<div class="float">🐰</div>
-<div class="float" style="animation-delay:.4s">🐻</div>
-<div class="float" style="animation-delay:.8s">🐊</div>
-<div class="float" style="animation-delay:1.2s">🐭</div>
+<div class="cast">
+<div>🐰</div><div>🐻</div><div>🐊</div><div>🐭</div>
 </div>
 </div>
-</section>
+</div>
 
 <section>
-<h2>Why Parents Love Little Giggles</h2>
-<div class="grid">
-<div class="card"><h3>📖 Story Time</h3><p>Interactive read-along adventures every week.</p></div>
-<div class="card"><h3>🎵 Sing Along</h3><p>Original songs with joyful characters.</p></div>
-<div class="card"><h3>🎮 Learn & Play</h3><p>Games that build real early-learning skills.</p></div>
-<div class="card"><h3>🏆 Rewards</h3><p>Celebrate progress with fun achievements.</p></div>
+<h2 style="margin-bottom:20px">Why Parents Love Little Giggles</h2>
+<div class="cards">
+<div class="card">📚 Stories every week</div>
+<div class="card">🎵 Original songs</div>
+<div class="card">🎮 Learning games</div>
+<div class="card">🎨 Creative activities</div>
 </div>
 </section>
 
-<section id="club">
-<div class="cta">
+<section id="stickers">
+<div class="ctabox">
 <h2>🎁 Join the Little Giggles Club</h2>
-<p>Download your FREE printable sticker pack and receive new stories, activities, and early access to the Learn & Play app.</p>
-<div class="form">
+<p>Download your FREE printable sticker pack and get early access to our Learn & Play app.</p>
 <input placeholder="Parent Name">
 <input placeholder="Email Address">
-<a class="btn" href="#">Get My FREE Sticker Pack</a>
-</div>
-</div>
-</section>
-
-<section>
-<h2>Meet Your Friends</h2>
-<div class="grid">
-<div class="card"><h3>🐰 Bella Bunny</h3><p>Curious, kind and brave.</p></div>
-<div class="card"><h3>🐻 Benny Bear</h3><p>Funny, friendly and helpful.</p></div>
-<div class="card"><h3>🐊 Coco Crocodile</h3><p>Energetic explorer who learns by trying.</p></div>
-<div class="card"><h3>🐭 Millie Mouse</h3><p>Creative thinker who loves books.</p></div>
+<p><a class="cta" href="#">Get My FREE Stickers</a></p>
 </div>
 </section>
 
-<footer>
-<p>© Little Giggles • Learn • Play • Laugh • Grow 🌈</p>
-</footer>
+<div class="footer">© Little Giggles</div>
 </body>
 </html>
