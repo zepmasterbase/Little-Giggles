@@ -1,92 +1,106 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Giggles | Stories</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Little Giggles | Story Tree</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:linear-gradient(180deg,#7ee4ff,#8d83ff,#89eda3);color:#fff}
-header{position:sticky;top:0;margin:12px auto;width:min(1200px,95%);display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:rgba(255,255,255,.15);backdrop-filter:blur(18px);border-radius:999px}
-a{text-decoration:none;color:#fff}
-.hero{text-align:center;padding:70px 20px}
-.hero h1{font-family:Fredoka,sans-serif;font-size:clamp(2.5rem,6vw,4.5rem)}
-.hero p{max-width:700px;margin:18px auto}
-.characters{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px;max-width:1000px;margin:30px auto}
-.characters img{width:100%;border-radius:22px;background:rgba(255,255,255,.15)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px;padding:20px 5% 80px}
-.card{background:rgba(255,255,255,.15);backdrop-filter:blur(16px);border-radius:24px;padding:22px}
-.badge{display:inline-block;background:#ffd95d;color:#222;padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:12px}
-.btn{display:inline-block;margin-top:16px;padding:12px 22px;border-radius:999px;background:#ff63c8;color:#fff}
-footer{text-align:center;padding:45px 20px;background:rgba(255,255,255,.12)}
-.social{display:flex;justify-content:center;gap:16px;margin:18px 0}
-.social a{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.2)}
+body{font-family:Poppins,sans-serif;color:#fff;overflow-x:hidden;background:linear-gradient(180deg,#08162f,#251f76 45%,#5d3ed5 78%,#85ecff)}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 2px);background-size:90px 90px;opacity:.45;animation:stars 40s linear infinite}
+@keyframes stars{from{transform:translateY(-120px)}to{transform:translateY(180px)}}
+header{position:fixed;top:15px;left:50%;transform:translateX(-50%);width:min(760px,94%);display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-radius:999px;background:rgba(8,15,50,.6);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.15);box-shadow:0 0 20px #79fff6;animation:pulse 3s infinite;z-index:20}
+@keyframes pulse{50%{box-shadow:0 0 36px #79fff6}}
+.logo{display:flex;gap:8px;align-items:center;font:700 1.2rem Fredoka}
+nav{display:flex;gap:15px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-size:.9rem}
+.hero{min-height:95vh;display:flex;justify-content:center;align-items:center;padding:110px 20px 40px}
+.heroBox{max-width:920px;text-align:center;padding:50px;border-radius:30px;background:rgba(10,15,45,.58);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.15)}
+.tree{font-size:72px;animation:float 3s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-10px)}}
+h1{font:700 clamp(3rem,7vw,5rem) Fredoka;text-shadow:0 4px 16px rgba(0,0,0,.7)}
+p{max-width:720px;margin:20px auto;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;background:linear-gradient(90deg,#ff63c8,#6c6cff);text-decoration:none;color:#fff;font-weight:700}
+.section{padding:70px 5%}
+.title{text-align:center;font:700 2.2rem Fredoka;margin-bottom:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card,.quest,.rewards{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:24px}
+.card h3{margin:12px 0;font-family:Fredoka}
+.card i{color:#9efcff;width:42px;height:42px}
+.quest ul{margin-left:20px;line-height:2}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}
+.stat{text-align:center}
+.stat b{display:block;font:700 2rem Fredoka}
+footer{text-align:center;padding:40px;background:rgba(0,0,0,.15)}
 </style>
 </head>
 <body>
 <header>
-<h2 style="font-family:Fredoka,sans-serif">🌈 Little Giggles</h2>
+<div class="logo"><i data-lucide="sparkles"></i>Little Giggles</div>
 <nav>
-<a href="index.html">Home</a> |
-<a href="stories.html">Stories</a> |
-<a href="songs.html">Songs</a> |
-<a href="games.html">Games</a>
+<a href="index.html">Home</a>
+<a href="characters.html">Characters</a>
+<a href="songs.html">Songs</a>
+<a href="sticker-club.html">Free Stickers</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>Story Time</h1>
-<p>Magical adventures that inspire imagination, kindness, confidence and curiosity.</p>
-
-<div class="characters">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png" alt="Bella Bunny">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png" alt="Benny Bear">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png" alt="Coco Crocodile">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png" alt="Millie Mouse">
+<div class="heroBox">
+<div class="tree">🌳✨</div>
+<h1>Welcome to the Story Tree</h1>
+<p>Every story is a magical adventure. Read, complete fun quests, earn badges and unlock FREE printable Little Giggles PDF eBooks.</p>
+<a class="btn" href="#quest"><i data-lucide="book-open"></i>Begin Today's Adventure</a>
 </div>
 </section>
 
-<section class="grid">
-<div class="card">
-<span class="badge">Episode 1</span>
-<h2>The Rainbow Adventure Begins</h2>
-<p>Join Bella Bunny and friends as they discover the magical Rainbow Bridge leading into Little Giggles Land.</p>
-<a class="btn" href="#">Read Story</a>
-</div>
-
-<div class="card">
-<span class="badge">Coming Soon</span>
-<h2>The Bubble Volcano Surprise</h2>
-<p>A bubbly mystery teaches teamwork and courage.</p>
-<a class="btn" href="#">Preview</a>
-</div>
-
-<div class="card">
-<span class="badge">Coming Soon</span>
-<h2>The Singing Train</h2>
-<p>Every station has a song that helps children learn something new.</p>
-<a class="btn" href="#">Preview</a>
-</div>
-
-<div class="card">
-<span class="badge">Coming Soon</span>
-<h2>The Lost Golden Star</h2>
-<p>The friends search Little Giggles Land to help a tiny star find its way home.</p>
-<a class="btn" href="#">Preview</a>
+<section class="section" id="quest">
+<div class="title">📖 Today's Story Quest</div>
+<div class="quest">
+<ul>
+<li>⭐ Read today's featured story</li>
+<li>🧩 Answer one fun question</li>
+<li>🎨 Colour your favourite character</li>
+<li>🎁 Unlock a FREE printable Little Giggles PDF eBook</li>
+</ul>
 </div>
 </section>
 
-<footer>
-<h2 style="font-family:Fredoka,sans-serif">📚 More Adventures Every Week</h2>
-<div class="social">
-<a href="https://www.tiktok.com/@little.giggles.tv4?_r=1&_t=ZS-989szt3VZWn"><i data-lucide="music-4"></i></a>
-<a href="https://www.facebook.com/share/1BbVb7brhg/"><i data-lucide="facebook"></i></a>
-<a href="https://www.instagram.com/gigglewithbunny?igsh=c3NjcjFkc2Fwc3lj"><i data-lucide="instagram"></i></a>
+<section class="section">
+<div class="title">Story Worlds</div>
+<div class="grid">
+<div class="card"><i data-lucide="trees"></i><h3>Forest Adventures</h3><p>Explore magical woodland tales.</p></div>
+<div class="card"><i data-lucide="castle"></i><h3>Fairy Castle</h3><p>Princesses, dragons and dreams.</p></div>
+<div class="card"><i data-lucide="train-front"></i><h3>Adventure Train</h3><p>Travel to amazing places.</p></div>
+<div class="card"><i data-lucide="ship-wheel"></i><h3>Ocean Wonders</h3><p>Meet friendly sea creatures.</p></div>
+<div class="card"><i data-lucide="rocket"></i><h3>Space Explorers</h3><p>Journey beyond the stars.</p></div>
+<div class="card"><i data-lucide="gift"></i><h3>Mystery Stories</h3><p>Unlock surprise adventures.</p></div>
 </div>
-<p>© 2026 Little Giggles</p>
-</footer>
+</section>
+
+<section class="section">
+<div class="title">Reading Journey</div>
+<div class="stats">
+<div class="rewards stat"><b>12</b>Stories Read</div>
+<div class="rewards stat"><b>7🔥</b>Day Streak</div>
+<div class="rewards stat"><b>5🏆</b>Badges</div>
+<div class="rewards stat"><b>3📚</b>PDF eBooks</div>
+</div>
+</section>
+
+<section class="section">
+<div class="title">🎁 Free eBook Rewards</div>
+<div class="grid">
+<div class="card"><i data-lucide="book-heart"></i><h3>Bella Bunny's Adventure</h3><p>Printable illustrated PDF.</p><a class="btn" href="#">Download</a></div>
+<div class="card"><i data-lucide="moon-star"></i><h3>Bedtime Stories</h3><p>Relaxing bedtime collection.</p><a class="btn" href="#">Download</a></div>
+<div class="card"><i data-lucide="alphabetical-sort"></i><h3>ABC Adventure</h3><p>Learn letters through stories.</p><a class="btn" href="#">Download</a></div>
+</div>
+</section>
+
+<footer>© 2026 Little Giggles • Learn • Play • Laugh • Grow</footer>
 <script>lucide.createIcons();</script>
 </body>
 </html>
