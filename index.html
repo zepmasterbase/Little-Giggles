@@ -1,126 +1,111 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Giggles</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Little Giggles Land</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:linear-gradient(#63d8ff,#7b8cff,#82e59b);color:#fff}
-header{position:fixed;top:15px;left:50%;transform:translateX(-50%);width:94%;max-width:1200px;background:rgba(255,255,255,.15);backdrop-filter:blur(18px);border-radius:60px;padding:12px 22px;display:flex;justify-content:space-between;align-items:center;z-index:99}
-.logo{font-family:Fredoka,sans-serif;font-size:1.5rem}
-nav a{text-decoration:none;color:#fff;margin:0 12px;font-weight:600}
-.cta{background:linear-gradient(90deg,#ff5dbf,#ffd85f);padding:14px 24px;border-radius:40px;text-decoration:none;color:#111;font-weight:700;box-shadow:0 0 25px rgba(255,215,0,.6)}
-.hero{padding:120px 5% 60px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+html{scroll-behavior:smooth}
+body{font-family:Poppins,sans-serif;background:linear-gradient(180deg,#79dcff,#8d82ff 45%,#85e9a0);color:#fff;overflow-x:hidden}
+header{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(1200px,94%);display:flex;justify-content:space-between;align-items:center;padding:12px 20px;background:rgba(255,255,255,.15);backdrop-filter:blur(18px);border-radius:60px;z-index:99}
+.logo{font:700 1.5rem Fredoka,sans-serif}
+nav a{color:#fff;text-decoration:none;margin:0 12px;font-weight:600}
+.btn{background:linear-gradient(90deg,#ff64c5,#ffd85f);padding:14px 24px;border-radius:40px;color:#111;text-decoration:none;font-weight:700;box-shadow:0 0 24px rgba(255,215,0,.55)}
+.hero{min-height:100vh;padding:110px 6% 40px;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
 .hero h1{font:700 4rem Fredoka,sans-serif;line-height:1.05}
-.hero p{margin:20px 0 30px;font-size:1.1rem}
-.button{display:inline-block;background:#fff;color:#111;text-decoration:none;padding:16px 28px;border-radius:40px;font-weight:700}
-.poster{background:rgba(255,255,255,.15);padding:18px;border-radius:28px}
-.poster img{width:100%;border-radius:20px;display:block}
-section{padding:70px 5%}
-.title{font:700 2.2rem Fredoka,sans-serif;margin-bottom:25px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px}
-.card{background:rgba(255,255,255,.15);padding:18px;border-radius:24px}
-.video{aspect-ratio:9/16;background:rgba(255,255,255,.12);border-radius:18px;display:flex;align-items:center;justify-content:center;text-align:center;padding:20px}
-.character{padding:30px;text-align:center}
-.character h3{font-family:Fredoka}
-.signup{max-width:900px;margin:auto;background:#fff;color:#222;padding:45px;border-radius:30px;text-align:center}
-input{width:100%;max-width:500px;padding:15px;margin:12px auto;border-radius:12px;border:none;display:block}
-footer{text-align:center;padding:40px}
+.hero p{margin:18px 0 28px;font-size:1.15rem;max-width:560px}
+.ctas a{display:inline-block;margin:8px 10px 0 0}
+.scene{position:relative;height:620px}
+.scene img{position:absolute;max-width:42%;filter:drop-shadow(0 18px 20px rgba(0,0,0,.25));transition:.4s}
+.scene img:hover{transform:translateY(-8px) scale(1.03)}
+.bella{left:24%;top:10%;max-width:52%}
+.benny{left:0;bottom:0}
+.coco{right:0;bottom:5%}
+.millie{right:18%;top:0}
+.cloud{position:absolute;background:rgba(255,255,255,.35);border-radius:50px;filter:blur(8px);opacity:.6}
+.c1{width:180px;height:60px;top:60px;left:30px}
+.c2{width:220px;height:70px;top:30px;right:30px}
+section{padding:70px 6%}
+h2{font:700 2.3rem Fredoka,sans-serif;margin-bottom:24px}
+.carousel{display:flex;gap:22px;overflow:auto;padding-bottom:8px}
+.card{min-width:320px;background:rgba(255,255,255,.14);backdrop-filter:blur(12px);border-radius:24px;padding:16px}
+video{width:100%;border-radius:18px;background:#000}
+.characters{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.char{background:rgba(255,255,255,.14);border-radius:22px;padding:18px;text-align:center}
+.char img{height:180px;object-fit:contain;width:100%}
+.signup{background:#fff;color:#222;border-radius:28px;padding:40px;max-width:900px;margin:auto;text-align:center}
+input{width:min(480px,100%);padding:14px;margin:10px auto;display:block;border:none;border-radius:12px}
+footer{text-align:center;padding:35px}
 @media(max-width:900px){
 .hero{grid-template-columns:1fr}
 .hero h1{font-size:2.8rem}
+.scene{height:500px}
 nav{display:none}
 }
 </style>
 </head>
 <body>
-
 <header>
 <div class="logo">🌈 Little Giggles</div>
 <nav>
-<a href="#">Stories</a>
-<a href="#">Videos</a>
-<a href="#">Songs</a>
-<a href="#">Parents</a>
+<a href="#videos">Videos</a>
+<a href="#friends">Friends</a>
+<a href="#club">Sticker Club</a>
 </nav>
-<a class="cta" href="#club">🎁 FREE Stickers</a>
+<a class="btn" href="#club">🎁 FREE Stickers</a>
 </header>
 
 <section class="hero">
 <div>
-<h1>Learning That Feels Like Play.</h1>
-<p>Join Bella Bunny, Benny Bear, Coco Crocodile and Millie Mouse for magical stories, songs, games and adventures.</p>
-<a class="button" href="#videos">Watch Adventures</a>
+<h1>Welcome to Little Giggles Land</h1>
+<p>Stories, songs, learning games and magical adventures with Bella Bunny, Benny Bear, Coco Crocodile and Millie Mouse.</p>
+<div class="ctas">
+<a class="btn" href="#videos">▶ Watch Adventures</a>
+<a class="btn" href="#club">🎁 Get FREE Stickers</a>
 </div>
-
-<div class="poster">
-<img src="meet-our-little-giggles-friends.jpg" alt="Little Giggles Characters">
+</div>
+<div class="scene">
+<div class="cloud c1"></div><div class="cloud c2"></div>
+<img class="bella" src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskq2lv4co1u1g153p1hn2o2e1h.png" alt="Bella Bunny">
+<img class="benny" src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png" alt="Benny Bear">
+<img class="coco" src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png" alt="Coco Crocodile">
+<img class="millie" src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png" alt="Millie Mouse">
 </div>
 </section>
 
 <section id="videos">
-<h2 class="title">🎬 Featured Adventures</h2>
-<div class="grid">
-
-<div class="card">
-<div class="video">
-<strong>Episode 1</strong><br><br>
-Replace with TikTok Embed<br><br>
-https://vt.tiktok.com/ZSXHWrVdt/
+<h2>🎬 Featured Adventures</h2>
+<div class="carousel">
+<div class="card"><video controls playsinline preload="metadata"><source src="54123.mp4" type="video/mp4"></video><h3>Episode 1</h3></div>
+<div class="card"><video controls playsinline preload="metadata"><source src="54294.mp4" type="video/mp4"></video><h3>Episode 2</h3></div>
+<div class="card"><video controls playsinline preload="metadata"><source src="54316.mp4" type="video/mp4"></video><h3>Episode 3</h3></div>
 </div>
-</div>
-
-<div class="card">
-<div class="video">
-<strong>Episode 2</strong><br><br>
-Replace with TikTok Embed<br><br>
-https://vt.tiktok.com/ZSXHW2GEs/
-</div>
-</div>
-
-<div class="card">
-<div class="video">
-<strong>Episode 3</strong><br><br>
-Replace with TikTok Embed<br><br>
-https://vt.tiktok.com/ZSXHWh5DU/
-</div>
-</div>
-
-</div>
+<p style="margin-top:16px;opacity:.9">If these videos are uploaded to your web server, keep the same filenames or update the <code>src</code> paths. Visitors will watch them directly on your website without leaving the page.</p>
 </section>
 
-<section>
-<h2 class="title">🌈 Meet Your Friends</h2>
-<div class="grid">
-<div class="card character"><h3>🐰 Bella Bunny</h3><p>Curious • Kind • Brave</p></div>
-<div class="card character"><h3>🐻 Benny Bear</h3><p>Funny • Helpful</p></div>
-<div class="card character"><h3>🐊 Coco Crocodile</h3><p>Energetic • Adventurous</p></div>
-<div class="card character"><h3>🐭 Millie Mouse</h3><p>Creative • Loves Reading</p></div>
+<section id="friends">
+<h2>🌈 Meet the Friends</h2>
+<div class="characters">
+<div class="char"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskq2lv4co1u1g153p1hn2o2e1h.png"><h3>Bella Bunny</h3></div>
+<div class="char"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png"><h3>Benny Bear</h3></div>
+<div class="char"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png"><h3>Coco Crocodile</h3></div>
+<div class="char"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png"><h3>Millie Mouse</h3></div>
 </div>
 </section>
 
 <section id="club">
 <div class="signup">
-<h2 class="title">🎁 Join the Little Giggles Club</h2>
-<p>Download FREE stickers, coloring pages and receive new adventures every week.</p>
-<input placeholder="Parent Name">
-<input placeholder="Email Address">
-<p><a class="cta" href="#">Get My FREE Sticker Pack</a></p>
+<h2>Join the Little Giggles Club</h2>
+<p>Get free stickers, printable activities and new adventures.</p>
+<input placeholder="Parent name">
+<input placeholder="Email address">
+<p><a class="btn" href="#">Join Free</a></p>
 </div>
 </section>
 
-<footer>
-© Little Giggles • Learn • Play • Laugh • Grow
-</footer>
-
-<!--
-Replace meet-our-little-giggles-friends.jpg with your uploaded character artwork.
-
-Replace the three TikTok placeholders with official TikTok embed code from:
-https://developers.tiktok.com/doc/embed-videos/
--->
-
+<footer>© Little Giggles</footer>
 </body>
 </html>
