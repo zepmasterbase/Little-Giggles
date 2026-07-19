@@ -3,99 +3,102 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Little Giggles | Characters</title>
+<title>Little Giggles | Meet the Giggle Friends</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:linear-gradient(180deg,#07152e,#261d72 45%,#6540d6 80%,#83ebff);color:#fff;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 2px);background-size:85px 85px;opacity:.45;animation:fall 45s linear infinite}
-@keyframes fall{from{transform:translateY(-140px)}to{transform:translateY(180px)}}
-.glow{position:fixed;inset:0;pointer-events:none;background:
-radial-gradient(circle at 20% 20%,rgba(0,255,255,.18),transparent 28%),
-radial-gradient(circle at 80% 15%,rgba(255,90,210,.16),transparent 28%);
-filter:blur(18px)}
-header{position:sticky;top:14px;width:min(760px,94%);margin:14px auto;padding:12px 18px;border-radius:999px;
-display:flex;justify-content:space-between;align-items:center;
-background:rgba(12,18,55,.55);backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.15);
-box-shadow:0 0 18px rgba(95,255,230,.55);animation:pulse 2.8s infinite}
-@keyframes pulse{50%{box-shadow:0 0 30px rgba(95,255,230,.9)}}
-.logo{display:flex;align-items:center;gap:8px;font:700 1.2rem Fredoka,sans-serif}
-nav{display:flex;gap:14px;flex-wrap:wrap}
-nav a{text-decoration:none;color:#fff;font-size:.9rem;font-weight:600}
-.hero{text-align:center;padding:60px 20px 30px}
-.hero h1{font:700 clamp(2.8rem,7vw,5rem) Fredoka,sans-serif;text-shadow:0 4px 16px rgba(0,0,0,.6)}
-.hero p{max-width:700px;margin:18px auto;line-height:1.8;color:#eefcff}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;padding:40px 5% 70px}
-.card{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:24px;text-align:center;transition:.25s}
-.card:hover{transform:translateY(-8px)}
-.avatar{width:120px;height:120px;border-radius:50%;margin:0 auto 18px;background:linear-gradient(135deg,#ff66ca,#73dfff);display:flex;align-items:center;justify-content:center}
-.avatar i{width:56px;height:56px}
-h2{font-family:Fredoka,sans-serif;margin-bottom:8px}
-.badge{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.12);margin:10px 0;font-size:.85rem}
-footer{text-align:center;padding:40px;background:rgba(0,0,0,.15)}
-.btn{display:inline-flex;gap:8px;align-items:center;margin-top:14px;padding:12px 18px;border-radius:999px;background:linear-gradient(90deg,#ff63c8,#6b6dff);color:#fff;text-decoration:none;font-weight:700}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{font-family:Poppins,sans-serif;color:#fff;background:linear-gradient(180deg,#07162f,#251f76 45%,#5e40d7 78%,#88edff);overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;background-image:radial-gradient(#fff 1px,transparent 2px);background-size:90px 90px;opacity:.45;pointer-events:none;animation:fall 40s linear infinite}
+@keyframes fall{from{transform:translateY(-120px)}to{transform:translateY(180px)}}
+header{position:fixed;top:16px;left:50%;transform:translateX(-50%);width:min(760px,94%);display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-radius:999px;background:rgba(8,15,45,.58);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.15);box-shadow:0 0 20px #77fff5;animation:pulse 3s infinite;z-index:20}
+@keyframes pulse{50%{box-shadow:0 0 36px #77fff5}}
+.logo{font:700 1.2rem Fredoka,sans-serif;display:flex;align-items:center;gap:8px}
+nav{display:flex;gap:14px;flex-wrap:wrap}nav a{color:#fff;text-decoration:none;font-size:.9rem}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:110px 20px 40px}
+.heroBox{max-width:900px;text-align:center;padding:48px;background:rgba(10,15,45,.58);backdrop-filter:blur(20px);border-radius:30px;border:1px solid rgba(255,255,255,.15)}
+h1{font:700 clamp(3rem,7vw,5rem) Fredoka,sans-serif;text-shadow:0 4px 16px rgba(0,0,0,.6)}
+p{max-width:720px;margin:20px auto;line-height:1.8}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;background:linear-gradient(90deg,#ff63c8,#6d6cff);color:#fff;text-decoration:none;font-weight:700}
+.section{padding:70px 5%}
+.title{text-align:center;font:700 2.2rem Fredoka;margin-bottom:25px}
+.tabs{display:flex;justify-content:center;flex-wrap:wrap;gap:12px;margin-bottom:25px}
+.tabs button{padding:12px 18px;border:none;border-radius:999px;background:#ffffff18;color:#fff;cursor:pointer}
+.slide{display:none;max-width:1000px;margin:auto;background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);border-radius:28px;padding:30px}
+.slide.active{display:grid;grid-template-columns:260px 1fr;gap:30px}
+.avatar{width:220px;height:220px;margin:auto;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ff6bcf,#6fe8ff);animation:bob 2.5s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-10px)}}
+.avatar i{width:100px;height:100px}
+.bubble{background:#ffffff18;padding:18px;border-radius:20px;margin:16px 0}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.actions a{padding:12px 16px;border-radius:999px;background:linear-gradient(90deg,#ff63c8,#6d6cff);color:#fff;text-decoration:none}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}
+.stat{background:#ffffff10;border-radius:20px;padding:20px;text-align:center}
+.stat b{display:block;font:700 2rem Fredoka}
+footer{text-align:center;padding:35px;background:#00000020}
+@media(max-width:700px){.slide.active{grid-template-columns:1fr;text-align:center}.actions{justify-content:center}}
 </style>
 </head>
 <body>
-<div class="glow"></div>
-
 <header>
 <div class="logo"><i data-lucide="sparkles"></i>Little Giggles</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="stories.html">Stories</a>
-<a href="songs.html">Songs</a>
-<a href="sticker-club.html">Free Stickers</a>
-</nav>
+<nav><a href="index.html">Home</a><a href="stories.html">Stories</a><a href="songs.html">Songs</a><a href="sticker-club.html">Free Stickers</a></nav>
 </header>
 
 <section class="hero">
-<h1>Meet Our Magical Friends ✨</h1>
-<p>Every Little Giggles adventure is filled with kindness, curiosity, courage and laughter. Meet the lovable friends who make every story, song and game unforgettable.</p>
+<div class="heroBox">
+<div style="font-size:64px">🎈🌈✨</div>
+<h1>Meet Your Giggle Friends</h1>
+<p>Welcome to the magical clubhouse! Tap a friend below to hear their introduction, discover their personality and begin a fun adventure.</p>
+<a class="btn" href="#friends"><i data-lucide="play-circle"></i>Meet Everyone</a>
+</div>
 </section>
 
-<section class="grid">
-
-<div class="card">
-<div class="avatar"><i data-lucide="rabbit"></i></div>
-<h2>Bella Bunny</h2>
-<div class="badge">Kind • Curious • Brave</div>
-<p>Bella loves discovering magical places and helping friends solve problems with kindness and imagination.</p>
-<a class="btn" href="stories.html"><i data-lucide="book-open"></i>Read Stories</a>
+<section class="section" id="friends">
+<div class="title">Character Showcase</div>
+<div class="tabs">
+<button onclick="show(0)">🐰 Bella</button>
+<button onclick="show(1)">🐻 Benny</button>
+<button onclick="show(2)">🐊 Coco</button>
+<button onclick="show(3)">🐭 Millie</button>
 </div>
 
-<div class="card">
-<div class="avatar"><i data-lucide="bear"></i></div>
-<h2>Benny Bear</h2>
-<div class="badge">Friendly • Funny • Helpful</div>
-<p>Benny spreads smiles everywhere he goes and reminds everyone that sharing makes adventures even better.</p>
-<a class="btn" href="songs.html"><i data-lucide="music-4"></i>Sing Along</a>
+<div class="slide active">
+<div class="avatar"><i data-lucide="sparkles"></i></div>
+<div><h2>Bella Bunny 👋</h2><div class="bubble">"Hi! I'm Bella Bunny! I love adventures. Let's explore together!"</div><p>Kind, curious and always ready to help friends discover magical places.</p><div class="actions"><a href="stories.html">📖 My Stories</a><a href="songs.html">🎵 Sing With Me</a><a href="sticker-club.html">🎁 My Stickers</a></div></div>
 </div>
 
-<div class="card">
-<div class="avatar"><i data-lucide="waves"></i></div>
-<h2>Coco Crocodile</h2>
-<div class="badge">Confident • Clever • Caring</div>
-<p>Coco encourages children to try new things, learn every day and celebrate every little achievement.</p>
-<a class="btn" href="games.html"><i data-lucide="gamepad-2"></i>Play Games</a>
+<div class="slide">
+<div class="avatar"><i data-lucide="party-popper"></i></div>
+<div><h2>Benny Bear 😂</h2><div class="bubble">"I'm Benny Bear! Let's laugh and learn together!"</div><p>Friendly, funny and full of cheerful energy that makes everyone smile.</p><div class="actions"><a href="stories.html">📖 Stories</a><a href="songs.html">🎵 Dance</a></div></div>
 </div>
 
-<div class="card">
-<div class="avatar"><i data-lucide="book-heart"></i></div>
-<h2>Millie Mouse</h2>
-<div class="badge">Creative • Smart • Gentle</div>
-<p>Millie loves books, drawing and inspiring children to imagine wonderful new worlds.</p>
-<a class="btn" href="sticker-club.html"><i data-lucide="gift"></i>Free Stickers</a>
+<div class="slide">
+<div class="avatar"><i data-lucide="thumbs-up"></i></div>
+<div><h2>Coco Crocodile 👍</h2><div class="bubble">"Trying new things makes us stronger!"</div><p>Confident, caring and always encouraging children to be brave.</p><div class="actions"><a href="games.html">🎮 Play</a><a href="stories.html">📖 Stories</a></div></div>
 </div>
 
+<div class="slide">
+<div class="avatar"><i data-lucide="book-open"></i></div>
+<div><h2>Millie Mouse 📚</h2><div class="bubble">"Let's imagine amazing adventures together!"</div><p>A creative storyteller who inspires reading and imagination.</p><div class="actions"><a href="stories.html">📖 Read</a><a href="sticker-club.html">🎁 Stickers</a></div></div>
+</div>
 </section>
 
-<footer>
-<p>© 2026 Little Giggles • Learn • Play • Laugh • Grow</p>
-</footer>
+<section class="section">
+<div class="title">Friendship Journey</div>
+<div class="stats">
+<div class="stat"><b>4</b>Friends Met</div>
+<div class="stat"><b>18⭐</b>Stars Earned</div>
+<div class="stat"><b>6🏅</b>Badges</div>
+<div class="stat"><b>12🎁</b>Stickers Collected</div>
+</div>
+</section>
 
-<script>lucide.createIcons();</script>
-</body>
-</html>
+<footer>© 2026 Little Giggles • Learn • Play • Laugh • Grow</footer>
+<script>
+lucide.createIcons();
+const slides=document.querySelectorAll('.slide');
+function show(i){slides.forEach((s,n)=>s.classList.toggle('active',n===i));}
+let idx=0;setInterval(()=>{idx=(idx+1)%slides.length;show(idx);},5000);
+</script>
+</body></html>
