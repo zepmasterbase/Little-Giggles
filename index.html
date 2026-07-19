@@ -1,125 +1,135 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Giggles | Welcome to Little Giggles Land</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<title>Little Giggles Land</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:linear-gradient(180deg,#7fe5ff,#8b82ff,#8ceca5);color:#fff;overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;background:
-radial-gradient(circle at 15% 20%,rgba(255,255,255,.35),transparent 18%),
-radial-gradient(circle at 80% 15%,rgba(255,255,255,.25),transparent 18%),
-radial-gradient(circle at 50% 80%,rgba(255,255,255,.2),transparent 20%);
-animation:float 12s ease-in-out infinite alternate;pointer-events:none}
-@keyframes float{from{transform:translateY(0)}to{transform:translateY(-20px)}}
-header{position:sticky;top:10px;z-index:9;width:min(1200px,95%);margin:12px auto;padding:15px 22px;background:rgba(255,255,255,.18);backdrop-filter:blur(16px);border-radius:999px;display:flex;justify-content:space-between;align-items:center}
-nav{display:flex;gap:12px;flex-wrap:wrap}
-nav a{text-decoration:none;color:#fff;font-weight:600}
-.hero{min-height:90vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:40px 20px}
-.heroBox{max-width:900px;background:rgba(255,255,255,.12);backdrop-filter:blur(18px);padding:40px;border-radius:30px}
-h1{font-family:Fredoka,sans-serif;font-size:clamp(3rem,7vw,5.5rem)}
-p{line-height:1.7}
-.cta{margin-top:28px;display:flex;justify-content:center;gap:15px;flex-wrap:wrap}
-.btn{padding:15px 26px;border-radius:999px;text-decoration:none;background:#ff61c7;color:#fff;font-weight:700}
-.section{padding:70px 5%}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
-.card,.form{background:rgba(255,255,255,.15);backdrop-filter:blur(18px);padding:24px;border-radius:24px}
-.card h3{font-family:Fredoka,sans-serif;margin-bottom:10px}
-input{width:100%;padding:14px;margin:10px 0;border:none;border-radius:12px}
-button{width:100%;padding:15px;border:none;border-radius:999px;background:#ff61c7;color:#fff;font-weight:700;cursor:pointer}
-#success{display:none;margin-top:16px;padding:15px;background:rgba(255,255,255,.2);border-radius:12px}
-.download{display:none;margin-top:15px;text-align:center}
-.download a{display:inline-block;background:#6b63ff;color:#fff;padding:12px 20px;border-radius:999px;text-decoration:none}
-footer{text-align:center;padding:40px;background:rgba(255,255,255,.12)}
-.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));max-width:900px;margin:20px auto;gap:8px}
-.links a,.social a{color:#fff;text-decoration:none}
-.social{display:flex;justify-content:center;gap:16px;margin-top:18px}
-.social a{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.2)}
+html{scroll-behavior:smooth}
+body{
+font-family:Poppins,sans-serif;color:#fff;overflow-x:hidden;
+background:linear-gradient(180deg,#07162f,#2b2477 40%,#6645d9 75%,#8be9ff)}
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;
+background-image:
+radial-gradient(#fff 1px,transparent 1.6px),
+radial-gradient(#fff8 1px,transparent 1.8px);
+background-size:90px 90px,160px 160px;
+animation:stars 60s linear infinite;
+opacity:.55}
+@keyframes stars{from{transform:translateY(-200px)}to{transform:translateY(250px)}}
+.glow{position:fixed;inset:0;pointer-events:none;background:
+radial-gradient(circle at 20% 20%,rgba(0,255,255,.18),transparent 28%),
+radial-gradient(circle at 80% 20%,rgba(255,120,220,.18),transparent 26%),
+radial-gradient(circle at 50% 85%,rgba(255,255,255,.08),transparent 32%)}
+header{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1200px,95%);
+display:flex;justify-content:space-between;align-items:center;padding:16px 24px;
+background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12);
+border-radius:999px;z-index:10}
+.logo{font:700 1.5rem Fredoka,sans-serif;display:flex;gap:10px;align-items:center}
+nav{display:flex;gap:14px;flex-wrap:wrap}
+nav a{color:#fff;text-decoration:none;font-weight:600}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:120px 20px 60px}
+.panel{max-width:950px;text-align:center;padding:48px;border-radius:30px;
+background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12)}
+h1{font:700 clamp(3rem,7vw,5.8rem) Fredoka,sans-serif;text-shadow:0 0 20px rgba(255,255,255,.35)}
+p{line-height:1.8}
+.actions{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:28px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:15px 24px;border-radius:999px;
+background:linear-gradient(90deg,#ff66ca,#7368ff);color:#fff;text-decoration:none;font-weight:700}
+.section{padding:80px 5%}
+.title{text-align:center;font:700 2.3rem Fredoka,sans-serif;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card,.form{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.12);border-radius:24px;padding:24px}
+.card i{width:42px;height:42px;color:#9dfbff}
+.card h3{margin:12px 0}
+.card a{color:#fff}
+.form{max-width:760px;margin:auto}
+input{width:100%;padding:14px;border:none;border-radius:12px;margin:10px 0}
+button{width:100%;padding:15px;border:none;border-radius:999px;background:linear-gradient(90deg,#ff66ca,#7368ff);color:#fff;font-weight:700}
+#done,#download{display:none;margin-top:16px;padding:14px;background:rgba(255,255,255,.12);border-radius:12px}
+footer{padding:50px 20px;background:rgba(0,0,0,.18)}
+.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;max-width:900px;margin:0 auto 30px}
+.quick a{display:flex;align-items:center;gap:8px;color:#fff;text-decoration:none}
+.social{display:flex;justify-content:center;gap:16px}
+.social a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+background:rgba(255,255,255,.12);color:#fff}
+.copy{text-align:center;margin-top:24px}
 </style>
 </head>
 <body>
-
+<div class="glow"></div>
 <header>
-<h2 style="font-family:Fredoka,sans-serif">🌈 Little Giggles</h2>
+<div class="logo"><i data-lucide="sparkles"></i> Little Giggles</div>
 <nav>
-<a href="stories.html">Stories</a>
-<a href="songs.html">Songs</a>
-<a href="games.html">Games</a>
-<a href="characters.html">Characters</a>
-<a href="parents.html">Parents</a>
-<a href="contact.html">Contact</a>
+<a href="stories.html">Stories</a><a href="songs.html">Songs</a><a href="games.html">Games</a>
+<a href="characters.html">Characters</a><a href="parents.html">Parents</a>
+<a href="#stickers">Free Stickers</a><a href="contact.html">Contact</a>
 </nav>
 </header>
 
 <section class="hero">
-<div class="heroBox">
+<div class="panel">
 <h1>Welcome to Little Giggles Land</h1>
-<p>Magical stories, joyful songs, educational games and lovable friends waiting to inspire every little learner.</p>
-<div class="cta">
-<a class="btn" href="#stickers">🎁 Get Free Sticker Pack</a>
-<a class="btn" href="stories.html">📚 Start Exploring</a>
+<p>Stories, songs, games and magical adventures for curious little learners. Join our community and receive a FREE printable sticker pack.</p>
+<div class="actions">
+<a class="btn" href="#stickers"><i data-lucide="gift"></i>Get Free Stickers</a>
+<a class="btn" href="stories.html"><i data-lucide="book-open"></i>Explore Stories</a>
 </div>
 </div>
 </section>
 
 <section class="section">
-<h2 style="text-align:center;font-family:Fredoka,sans-serif;margin-bottom:30px">Explore the Adventure</h2>
-<div class="cards">
-<div class="card"><h3>📚 Story Tree</h3><p>Read magical adventures.</p><a href="stories.html">Open →</a></div>
-<div class="card"><h3>🎵 Music Meadow</h3><p>Sing together.</p><a href="songs.html">Open →</a></div>
-<div class="card"><h3>🎮 Game Arcade</h3><p>Learn through play.</p><a href="games.html">Open →</a></div>
-<div class="card"><h3>🐰 Meet Friends</h3><p>Bella, Benny, Coco & Millie.</p><a href="characters.html">Open →</a></div>
+<div class="title">Explore the Adventure</div>
+<div class="grid">
+<div class="card"><i data-lucide="book-open"></i><h3>Story Tree</h3><p>Read magical adventures.</p><a href="stories.html">Open →</a></div>
+<div class="card"><i data-lucide="music-4"></i><h3>Music Meadow</h3><p>Sing together.</p><a href="songs.html">Open →</a></div>
+<div class="card"><i data-lucide="gamepad-2"></i><h3>Game Arcade</h3><p>Learn through play.</p><a href="games.html">Open →</a></div>
+<div class="card"><i data-lucide="users"></i><h3>Meet Friends</h3><p>Bella, Benny, Coco & Millie.</p><a href="characters.html">Open →</a></div>
 </div>
 </section>
 
 <section class="section" id="stickers">
 <div class="form">
-<h2 style="font-family:Fredoka,sans-serif;text-align:center">🎁 Claim Your FREE Sticker Pack</h2>
-<input id="parent" placeholder="Parent Name">
-<input id="child" placeholder="Child Name">
-<input id="email" type="email" placeholder="Email Address">
-<input id="age" placeholder="Child Age (Optional)">
-<button onclick="claim()">Send My Free Stickers</button>
-<div id="success">🎉 Thank you! Your details have been captured.</div>
-<div class="download" id="download">
-<p>Your download is ready.</p>
-<a href="sticker-pack.pdf" download>📥 Download Sticker Pack</a>
-</div>
+<div class="title">🎁 Claim Your FREE Sticker Pack</div>
+<input id="p" placeholder="Parent Name">
+<input id="c" placeholder="Child Name">
+<input id="e" placeholder="Email Address">
+<input placeholder="Child Age (Optional)">
+<button onclick="claim()">Send My Free Sticker Pack</button>
+<div id="done">✨ Thanks! Your information has been captured.</div>
+<div id="download"><a href="sticker-pack.pdf" download>📥 Download Sticker Pack</a></div>
 </div>
 </section>
 
 <footer>
-<div class="links">
-<a href="stories.html">Stories</a>
-<a href="songs.html">Songs</a>
-<a href="games.html">Games</a>
-<a href="characters.html">Characters</a>
-<a href="parents.html">Parents</a>
-<a href="sticker-club.html">Sticker Club</a>
-<a href="privacy.html">Privacy</a>
-<a href="terms.html">Terms</a>
+<div class="quick">
+<a href="privacy.html"><i data-lucide="shield-check"></i>Privacy</a>
+<a href="terms.html"><i data-lucide="file-text"></i>Terms</a>
+<a href="parents.html"><i data-lucide="heart-handshake"></i>Parents</a>
+<a href="sticker-club.html"><i data-lucide="stickers"></i>Sticker Club</a>
+<a href="contact.html"><i data-lucide="mail"></i>Contact</a>
 </div>
 <div class="social">
 <a href="https://www.tiktok.com/@little.giggles.tv4?_r=1&_t=ZS-989szt3VZWn"><i data-lucide="music-4"></i></a>
 <a href="https://www.facebook.com/share/1BbVb7brhg/"><i data-lucide="facebook"></i></a>
 <a href="https://www.instagram.com/gigglewithbunny?igsh=c3NjcjFkc2Fwc3lj"><i data-lucide="instagram"></i></a>
 </div>
-<p style="margin-top:20px">© 2026 Little Giggles • Learn • Play • Laugh • Grow</p>
+<div class="copy">© 2026 Little Giggles • Learn • Play • Laugh • Grow</div>
 </footer>
 
 <script>
 lucide.createIcons();
 function claim(){
-const p=parent.value.trim(),c=child.value.trim(),e=email.value.trim();
-if(!p||!c||!e){alert("Please complete the required fields.");return;}
-success.style.display="block";
+if(!p.value.trim()||!c.value.trim()||!e.value.trim()){alert("Please complete the required fields.");return;}
+done.style.display="block";
 download.style.display="block";
 }
 </script>
-
 </body>
 </html>
