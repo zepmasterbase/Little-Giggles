@@ -4,91 +4,98 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Little Giggles | Characters</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:linear-gradient(180deg,#7fe5ff,#8b84ff,#89eda2);color:#fff}
-header{position:sticky;top:12px;margin:12px auto;width:min(1200px,95%);display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:rgba(255,255,255,.15);backdrop-filter:blur(18px);border-radius:999px}
-nav a{color:#fff;text-decoration:none;margin:0 8px}
-.hero{text-align:center;padding:70px 20px}
-.hero h1{font:700 clamp(2.8rem,6vw,4.8rem) Fredoka,sans-serif}
-.hero p{max-width:720px;margin:18px auto}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px;padding:20px 5% 80px}
-.card{background:rgba(255,255,255,.15);backdrop-filter:blur(16px);border-radius:24px;padding:20px;text-align:center}
-.card img{width:100%;border-radius:20px;margin-bottom:16px}
-.badge{display:inline-block;background:#ffd95d;color:#222;padding:6px 12px;border-radius:999px;font-weight:700;margin-bottom:12px}
-.traits{list-style:none;margin-top:12px;text-align:left}
-.traits li{margin:6px 0}
-footer{text-align:center;padding:45px 20px;background:rgba(255,255,255,.12)}
-.social{display:flex;justify-content:center;gap:16px;margin:18px 0}
-.social a{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.2);color:#fff}
+body{font-family:Poppins,sans-serif;background:linear-gradient(180deg,#07152e,#261d72 45%,#6540d6 80%,#83ebff);color:#fff;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 2px);background-size:85px 85px;opacity:.45;animation:fall 45s linear infinite}
+@keyframes fall{from{transform:translateY(-140px)}to{transform:translateY(180px)}}
+.glow{position:fixed;inset:0;pointer-events:none;background:
+radial-gradient(circle at 20% 20%,rgba(0,255,255,.18),transparent 28%),
+radial-gradient(circle at 80% 15%,rgba(255,90,210,.16),transparent 28%);
+filter:blur(18px)}
+header{position:sticky;top:14px;width:min(760px,94%);margin:14px auto;padding:12px 18px;border-radius:999px;
+display:flex;justify-content:space-between;align-items:center;
+background:rgba(12,18,55,.55);backdrop-filter:blur(18px);
+border:1px solid rgba(255,255,255,.15);
+box-shadow:0 0 18px rgba(95,255,230,.55);animation:pulse 2.8s infinite}
+@keyframes pulse{50%{box-shadow:0 0 30px rgba(95,255,230,.9)}}
+.logo{display:flex;align-items:center;gap:8px;font:700 1.2rem Fredoka,sans-serif}
+nav{display:flex;gap:14px;flex-wrap:wrap}
+nav a{text-decoration:none;color:#fff;font-size:.9rem;font-weight:600}
+.hero{text-align:center;padding:60px 20px 30px}
+.hero h1{font:700 clamp(2.8rem,7vw,5rem) Fredoka,sans-serif;text-shadow:0 4px 16px rgba(0,0,0,.6)}
+.hero p{max-width:700px;margin:18px auto;line-height:1.8;color:#eefcff}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:24px;padding:40px 5% 70px}
+.card{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.12);border-radius:26px;padding:24px;text-align:center;transition:.25s}
+.card:hover{transform:translateY(-8px)}
+.avatar{width:120px;height:120px;border-radius:50%;margin:0 auto 18px;background:linear-gradient(135deg,#ff66ca,#73dfff);display:flex;align-items:center;justify-content:center}
+.avatar i{width:56px;height:56px}
+h2{font-family:Fredoka,sans-serif;margin-bottom:8px}
+.badge{display:inline-block;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.12);margin:10px 0;font-size:.85rem}
+footer{text-align:center;padding:40px;background:rgba(0,0,0,.15)}
+.btn{display:inline-flex;gap:8px;align-items:center;margin-top:14px;padding:12px 18px;border-radius:999px;background:linear-gradient(90deg,#ff63c8,#6b6dff);color:#fff;text-decoration:none;font-weight:700}
 </style>
 </head>
 <body>
+<div class="glow"></div>
+
 <header>
-<h2 style="font-family:Fredoka,sans-serif">🌈 Little Giggles</h2>
+<div class="logo"><i data-lucide="sparkles"></i>Little Giggles</div>
 <nav>
 <a href="index.html">Home</a>
 <a href="stories.html">Stories</a>
 <a href="songs.html">Songs</a>
-<a href="games.html">Games</a>
-<a href="characters.html">Characters</a>
+<a href="sticker-club.html">Free Stickers</a>
 </nav>
 </header>
 
 <section class="hero">
-<h1>Meet the Little Giggles Friends</h1>
-<p>Every adventure is more magical with friends who are kind, brave, curious, and full of imagination.</p>
+<h1>Meet Our Magical Friends ✨</h1>
+<p>Every Little Giggles adventure is filled with kindness, curiosity, courage and laughter. Meet the lovable friends who make every story, song and game unforgettable.</p>
 </section>
 
 <section class="grid">
+
 <div class="card">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png" alt="Bella Bunny">
-<div class="badge">Bella Bunny 🐰</div>
-<p>The cheerful explorer who loves helping everyone discover new adventures.</p>
-<ul class="traits">
-<li>💗 Kind</li><li>🌈 Curious</li><li>📖 Loves stories</li><li>🤝 Helpful</li>
-</ul>
+<div class="avatar"><i data-lucide="rabbit"></i></div>
+<h2>Bella Bunny</h2>
+<div class="badge">Kind • Curious • Brave</div>
+<p>Bella loves discovering magical places and helping friends solve problems with kindness and imagination.</p>
+<a class="btn" href="stories.html"><i data-lucide="book-open"></i>Read Stories</a>
 </div>
 
 <div class="card">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png" alt="Benny Bear">
-<div class="badge">Benny Bear 🐻</div>
-<p>A gentle friend who enjoys counting, building and solving fun puzzles.</p>
-<ul class="traits">
-<li>🔢 Loves numbers</li><li>💪 Brave</li><li>😊 Friendly</li><li>🧩 Problem solver</li>
-</ul>
+<div class="avatar"><i data-lucide="bear"></i></div>
+<h2>Benny Bear</h2>
+<div class="badge">Friendly • Funny • Helpful</div>
+<p>Benny spreads smiles everywhere he goes and reminds everyone that sharing makes adventures even better.</p>
+<a class="btn" href="songs.html"><i data-lucide="music-4"></i>Sing Along</a>
 </div>
 
 <div class="card">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png" alt="Coco Crocodile">
-<div class="badge">Coco Crocodile 🐊</div>
-<p>The energetic adventurer who enjoys music, dancing and exploring.</p>
-<ul class="traits">
-<li>🎵 Musical</li><li>💚 Courageous</li><li>🌍 Explorer</li><li>⚡ Energetic</li>
-</ul>
+<div class="avatar"><i data-lucide="waves"></i></div>
+<h2>Coco Crocodile</h2>
+<div class="badge">Confident • Clever • Caring</div>
+<p>Coco encourages children to try new things, learn every day and celebrate every little achievement.</p>
+<a class="btn" href="games.html"><i data-lucide="gamepad-2"></i>Play Games</a>
 </div>
 
 <div class="card">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png" alt="Millie Mouse">
-<div class="badge">Millie Mouse 🐭</div>
-<p>A creative artist who loves painting, crafting and making new friends smile.</p>
-<ul class="traits">
-<li>🎨 Creative</li><li>✨ Imaginative</li><li>😊 Caring</li><li>🌼 Joyful</li>
-</ul>
+<div class="avatar"><i data-lucide="book-heart"></i></div>
+<h2>Millie Mouse</h2>
+<div class="badge">Creative • Smart • Gentle</div>
+<p>Millie loves books, drawing and inspiring children to imagine wonderful new worlds.</p>
+<a class="btn" href="sticker-club.html"><i data-lucide="gift"></i>Free Stickers</a>
 </div>
+
 </section>
 
 <footer>
-<h2 style="font-family:Fredoka,sans-serif">See You in Little Giggles Land!</h2>
-<div class="social">
-<a href="https://www.tiktok.com/@little.giggles.tv4?_r=1&_t=ZS-989szt3VZWn"><i data-lucide="music-4"></i></a>
-<a href="https://www.facebook.com/share/1BbVb7brhg/"><i data-lucide="facebook"></i></a>
-<a href="https://www.instagram.com/gigglewithbunny?igsh=c3NjcjFkc2Fwc3lj"><i data-lucide="instagram"></i></a>
-</div>
-<p>© 2026 Little Giggles</p>
+<p>© 2026 Little Giggles • Learn • Play • Laugh • Grow</p>
 </footer>
+
 <script>lucide.createIcons();</script>
 </body>
 </html>
