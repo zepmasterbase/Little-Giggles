@@ -3,209 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Little Giggles V200</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<title>Little Giggles V800 Ultimate</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
---glass:rgba(255,255,255,.14);
---line:rgba(255,255,255,.28);
---pink:#ff5ec9;
---gold:#ffd95d;
+--sky1:#7de5ff;--sky2:#8d84ff;--sky3:#87eea2;
+--glass:rgba(255,255,255,.16);--line:rgba(255,255,255,.28);
+--pink:#ff66ca;--gold:#ffd95d;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
 font-family:Poppins,sans-serif;
-color:#fff;
-background:linear-gradient(180deg,#71dcff,#8d84ff 45%,#7de89d);
-overflow-x:hidden;
+background:linear-gradient(180deg,var(--sky1),var(--sky2) 45%,var(--sky3));
+color:#fff;overflow-x:hidden;
 }
-body:before{
-content:"";
-position:fixed;inset:0;
+body::before{
+content:"";position:fixed;inset:0;pointer-events:none;
 background:
-radial-gradient(circle at 15% 15%,rgba(255,255,255,.22),transparent 20%),
-radial-gradient(circle at 85% 25%,rgba(255,255,255,.18),transparent 18%);
-animation:bgmove 18s ease-in-out infinite alternate;
-pointer-events:none;
+radial-gradient(circle at 15% 15%,rgba(255,255,255,.22),transparent 18%),
+radial-gradient(circle at 85% 20%,rgba(255,255,255,.16),transparent 20%);
+animation:floatbg 18s ease-in-out infinite alternate;
 }
-@keyframes bgmove{to{transform:translateY(-18px)}}
-.cloud{position:fixed;background:rgba(255,255,255,.22);border-radius:60px;filter:blur(2px);animation:drift linear infinite}
-.c1{width:180px;height:60px;top:80px;left:-220px;animation-duration:45s}
-.c2{width:240px;height:70px;top:180px;left:-260px;animation-duration:60s}
-@keyframes drift{to{transform:translateX(calc(100vw + 500px))}}
+@keyframes floatbg{to{transform:translateY(-20px)}}
 header{
 position:fixed;top:14px;left:50%;transform:translateX(-50%);
-width:min(1220px,95%);
+width:min(1280px,95%);
 display:flex;justify-content:space-between;align-items:center;
-padding:12px 20px;
+padding:12px 22px;
 background:var(--glass);
 backdrop-filter:blur(18px);
 border:1px solid var(--line);
 border-radius:999px;
-z-index:99;
+z-index:10;
 }
-.logo{font:700 1.6rem Fredoka,sans-serif}
+.logo{font:700 1.7rem Fredoka,sans-serif}
 nav{display:flex;gap:18px}
-nav a{color:#fff;text-decoration:none;font-weight:600}
+nav a{text-decoration:none;color:#fff;font-weight:600}
 .btn{
-display:inline-block;
-padding:15px 28px;
-border-radius:999px;
-text-decoration:none;
-font-weight:700;
-transition:.35s;
-}
-.primary{
+display:inline-block;padding:15px 28px;border-radius:999px;
 background:linear-gradient(90deg,var(--pink),var(--gold));
-color:#222;
-box-shadow:0 0 24px rgba(255,217,93,.7);
-animation:pulse 3s infinite;
+color:#222;text-decoration:none;font-weight:700;
+box-shadow:0 0 28px rgba(255,217,93,.7)
 }
-.secondary{
-background:rgba(255,255,255,.16);
-color:#fff;border:1px solid rgba(255,255,255,.35);
-margin-left:12px;
-}
-.btn:hover{transform:translateY(-4px)}
-@keyframes pulse{50%{transform:scale(1.05);box-shadow:0 0 40px rgba(255,217,93,.95)}}
 .hero{
 min-height:100vh;
 display:grid;
-grid-template-columns:1.1fr .9fr;
+grid-template-columns:1fr 1fr;
+gap:48px;
 align-items:center;
-padding:120px 6% 60px;
-gap:40px;
+padding:120px 6% 70px;
 }
-.hero h1{font:700 clamp(3rem,6vw,5.4rem) Fredoka,sans-serif;line-height:1.05}
-.hero p{font-size:1.15rem;max-width:600px;margin:24px 0 36px}
-.stage{
+.hero h1{font:700 clamp(3rem,6vw,5.8rem) Fredoka,sans-serif;line-height:1.02}
+.hero p{margin:24px 0 34px;font-size:1.1rem;max-width:580px}
+.panel{
 background:var(--glass);
 border:1px solid var(--line);
+border-radius:34px;
+padding:18px;
 backdrop-filter:blur(18px);
-border-radius:36px;
-padding:24px;
-box-shadow:0 20px 60px rgba(0,0,0,.2)
 }
-.grid4{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.grid4 img{width:100%;border-radius:24px;background:#ffffff18;animation:float 5s ease-in-out infinite}
-.grid4 img:nth-child(2){animation-delay:1s}
-.grid4 img:nth-child(3){animation-delay:2s}
-.grid4 img:nth-child(4){animation-delay:3s}
-@keyframes float{50%{transform:translateY(-10px)}}
+.characters{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.characters img{width:100%;border-radius:22px;animation:bob 5s ease-in-out infinite}
+.characters img:nth-child(2){animation-delay:1s}
+.characters img:nth-child(3){animation-delay:2s}
+.characters img:nth-child(4){animation-delay:3s}
+@keyframes bob{50%{transform:translateY(-10px)}}
 section{padding:90px 6%}
-.title{text-align:center;font:700 2.5rem Fredoka,sans-serif;margin-bottom:34px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
+.title{text-align:center;font:700 2.5rem Fredoka,sans-serif;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
 .card{
 background:var(--glass);
 border:1px solid var(--line);
-border-radius:28px;
-padding:26px;
-text-align:center;
-backdrop-filter:blur(16px);
-transition:.35s;
-}
-.card:hover{transform:translateY(-8px)}
-.icon{font-size:2.4rem;margin-bottom:12px}
-.world{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-gap:18px;
-}
-.world .card{min-height:180px}
-.signup{
-max-width:900px;
-margin:auto;
-background:var(--glass);
-border:1px solid var(--line);
-border-radius:36px;
-padding:48px;
-text-align:center;
 backdrop-filter:blur(18px);
-}
-input{
-width:min(500px,100%);
-display:block;
-margin:12px auto;
-padding:16px;
-border:none;
-border-radius:16px;
-}
-footer{text-align:center;padding:40px}
-@media(max-width:900px){
-.hero{grid-template-columns:1fr}
-nav{display:none}
-.secondary{display:block;margin:14px 0 0}
-}
+border-radius:28px;
+padding:24px;
+text-align:center;
+transition:.3s}
+.card:hover{transform:translateY(-8px)}
+footer{
+padding:55px 20px;
+text-align:center;
+background:rgba(255,255,255,.12);
+border-top:1px solid var(--line);
+backdrop-filter:blur(18px)}
+.links,.social{display:flex;justify-content:center;flex-wrap:wrap;gap:18px;margin:20px 0}
+.links a,.social a{color:#fff;text-decoration:none}
+.social a{
+width:56px;height:56px;border-radius:50%;
+display:flex;align-items:center;justify-content:center;
+background:rgba(255,255,255,.16);
+border:1px solid var(--line);
+font-size:26px}
+@media(max-width:900px){.hero{grid-template-columns:1fr}nav{display:none}}
 </style>
 </head>
 <body>
-<div class="cloud c1"></div><div class="cloud c2"></div>
-
 <header>
 <div class="logo">🌈 Little Giggles</div>
 <nav>
-<a href="#">Home</a>
-<a href="#">Stories</a>
-<a href="#">Learn</a>
-<a href="#">Parents</a>
-<a href="#">Club</a>
+<a href="#">Home</a><a href="#">Stories</a><a href="#">Songs</a><a href="#">Games</a><a href="#">Characters</a><a href="#">Parents</a>
 </nav>
-<a class="btn primary" href="#club">🎁 FREE Stickers</a>
+<a class="btn" href="#">🎁 FREE Stickers</a>
 </header>
 
 <section class="hero">
 <div>
 <h1>Welcome to Little Giggles Land</h1>
-<p>Where every click begins an adventure. Discover magical friends, joyful learning, songs, creativity and imagination in one beautiful world.</p>
-<a class="btn primary" href="#club">✨ Join Free</a>
-<a class="btn secondary" href="#world">🌈 Explore</a>
+<p>A joyful world of stories, songs, games, creativity and imagination featuring Bella Bunny, Benny Bear, Coco Crocodile and Millie Mouse.</p>
+<a class="btn" href="#">✨ Start the Adventure</a>
 </div>
-
-<div class="stage">
-<div class="grid4">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png" alt="Bella">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png" alt="Benny">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png" alt="Coco">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png" alt="Millie">
+<div class="panel">
+<div class="characters">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png" alt="Bella Bunny">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png" alt="Benny Bear">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png" alt="Coco Crocodile">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png" alt="Millie Mouse">
 </div>
-</div>
-</section>
-
-<section id="world">
-<h2 class="title">Explore Little Giggles Land</h2>
-<div class="world">
-<div class="card"><div class="icon">🏰</div><h3>Giggle Castle</h3></div>
-<div class="card"><div class="icon">📖</div><h3>Story Tree</h3></div>
-<div class="card"><div class="icon">🎵</div><h3>Music Meadow</h3></div>
-<div class="card"><div class="icon">🎨</div><h3>Creative Garden</h3></div>
-<div class="card"><div class="icon">🚂</div><h3>Singing Train</h3></div>
-<div class="card"><div class="icon">🌋</div><h3>Bubble Volcano</h3></div>
-<div class="card"><div class="icon">⭐</div><h3>Rewards</h3></div>
-<div class="card"><div class="icon">🎁</div><h3>Sticker Club</h3></div>
 </div>
 </section>
 
 <section>
-<h2 class="title">Meet Your Friends</h2>
-<div class="cards">
-<div class="card"><h3>🐰 Bella Bunny</h3><p>Curious • Kind • Brave</p></div>
-<div class="card"><h3>🐻 Benny Bear</h3><p>Funny • Helpful</p></div>
-<div class="card"><h3>🐊 Coco Crocodile</h3><p>Explorer • Adventurous</p></div>
-<div class="card"><h3>🐭 Millie Mouse</h3><p>Creative • Loves Reading</p></div>
+<div class="title">Explore Little Giggles Land</div>
+<div class="grid">
+<div class="card">🏰<h3>Giggle Castle</h3></div>
+<div class="card">📖<h3>Story Tree</h3></div>
+<div class="card">🎵<h3>Music Meadow</h3></div>
+<div class="card">🎨<h3>Creative Garden</h3></div>
+<div class="card">🚂<h3>Singing Train</h3></div>
+<div class="card">🌋<h3>Bubble Volcano</h3></div>
+<div class="card">⭐<h3>Rewards</h3></div>
+<div class="card">🎁<h3>Sticker Club</h3></div>
 </div>
 </section>
 
-<section id="club">
-<div class="signup">
-<h2 class="title">Join the Little Giggles Club</h2>
-<p>Download free stickers, printable activities and be first to discover new adventures.</p>
-<input placeholder="Parent name">
-<input placeholder="Email address">
-<a class="btn primary" href="#">🎁 Get FREE Sticker Pack</a>
+<footer>
+<h2 style="font-family:Fredoka,sans-serif">🌈 Little Giggles</h2>
+<p>Learn • Play • Laugh • Grow</p>
+<div class="links">
+<a href="#">Home</a><a href="#">Stories</a><a href="#">Songs</a><a href="#">Games</a><a href="#">Parents</a><a href="#">Privacy</a><a href="#">Terms</a><a href="#">Contact</a>
 </div>
-</section>
-
-<footer>© Little Giggles • Learn • Play • Laugh • Grow</footer>
+<div class="social">
+<a href="https://www.tiktok.com/@little.giggles.tv4?_r=1&_t=ZS-989szt3VZWn" target="_blank">🎵</a>
+<a href="https://www.facebook.com/share/1BbVb7brhg/" target="_blank">📘</a>
+<a href="https://www.instagram.com/gigglewithbunny?igsh=c3NjcjFkc2Fwc3lj" target="_blank">📷</a>
+</div>
+<p>© 2026 Little Giggles. All Rights Reserved.</p>
+</footer>
 </body>
 </html>
