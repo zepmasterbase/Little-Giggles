@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Giggles | Sticker Club</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Poppins,sans-serif;
+background:linear-gradient(180deg,#7FE5FF,#8C84FF,#8AEDA2);
+color:#fff;
+}
+header{
+position:sticky;
+top:12px;
+margin:12px auto;
+width:min(1200px,95%);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 22px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+border-radius:999px;
+}
+header a{color:#fff;text-decoration:none;margin:0 8px}
+.hero{text-align:center;padding:70px 20px 40px}
+.hero h1{font-family:Fredoka,sans-serif;font-size:clamp(2.8rem,6vw,4.8rem)}
+.hero p{max-width:760px;margin:20px auto;line-height:1.7}
+.characters{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+gap:18px;
+max-width:900px;
+margin:35px auto;
+}
+.characters img{
+width:100%;
+border-radius:20px;
+background:rgba(255,255,255,.15);
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:22px;
+padding:20px 5% 60px;
+}
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+padding:24px;
+border-radius:24px;
+text-align:center;
+}
+.claim{
+max-width:760px;
+margin:0 auto 70px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+padding:30px;
+border-radius:24px;
+}
+.claim input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border:none;
+border-radius:12px;
+}
+.claim button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:999px;
+background:#ff63c8;
+color:#fff;
+font-weight:700;
+cursor:pointer;
+}
+#success{
+display:none;
+margin-top:18px;
+padding:15px;
+background:rgba(255,255,255,.2);
+border-radius:12px;
+}
+footer{
+text-align:center;
+padding:45px 20px;
+background:rgba(255,255,255,.12);
+}
+.social{
+display:flex;
+justify-content:center;
+gap:16px;
+margin:20px 0;
+}
+.social a{
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,.18);
+color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2 style="font-family:Fredoka,sans-serif">🎁 Little Giggles Sticker Club</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="stories.html">Stories</a>
+<a href="songs.html">Songs</a>
+<a href="games.html">Games</a>
+<a href="characters.html">Characters</a>
+<a href="parents.html">Parents</a>
+<a href="sticker-club.html">Sticker Club</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Join the Sticker Club</h1>
+<p>Collect fun printable stickers featuring Bella Bunny, Benny Bear, Coco Crocodile and Millie Mouse. New rewards arrive throughout the year.</p>
+
+<div class="characters">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png" alt="Bella Bunny">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png" alt="Benny Bear">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png" alt="Coco Crocodile">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png" alt="Millie Mouse">
+</div>
+</section>
+
+<section class="grid">
+<div class="card"><h3>⭐ Reward Stickers</h3><p>Celebrate reading, kindness, creativity and learning milestones.</p></div>
+<div class="card"><h3>🎨 Printable Sheets</h3><p>Download colourful sticker sheets for home or classroom use.</p></div>
+<div class="card"><h3>🎁 Exclusive Packs</h3><p>Members receive new themed sticker collections as they are released.</p></div>
+</section>
+
+<section class="claim">
+<h2 style="font-family:Fredoka,sans-serif;text-align:center">Claim Your Free Starter Pack</h2>
+
+<input id="parent" placeholder="Parent Name">
+<input id="child" placeholder="Child's First Name">
+<input id="email" type="email" placeholder="Parent Email Address">
+
+<button onclick="claimPack()">Claim My Free Sticker Pack</button>
+
+<div id="success">
+🎉 Thank you! Your Sticker Club request has been received. Connect this form to your backend (Supabase/Firebase) to automatically send printable sticker packs by email.
+</div>
+</section>
+
+<footer>
+<h2 style="font-family:Fredoka,sans-serif">🌈 Little Giggles</h2>
+<p>Learn • Play • Laugh • Grow</p>
+
+<div class="social">
+<a href="https://www.tiktok.com/@little.giggles.tv4?_r=1&_t=ZS-989szt3VZWn" target="_blank"><i data-lucide="music-4"></i></a>
+<a href="https://www.facebook.com/share/1BbVb7brhg/" target="_blank"><i data-lucide="facebook"></i></a>
+<a href="https://www.instagram.com/gigglewithbunny?igsh=c3NjcjFkc2Fwc3lj" target="_blank"><i data-lucide="instagram"></i></a>
+</div>
+
+<p>© 2026 Little Giggles. All Rights Reserved.</p>
+</footer>
+
+<script>
+lucide.createIcons();
+
+function claimPack(){
+const p=document.getElementById('parent').value.trim();
+const c=document.getElementById('child').value.trim();
+const e=document.getElementById('email').value.trim();
+
+if(!p||!c||!e){
+alert("Please complete all fields.");
+return;
+}
+document.getElementById('success').style.display='block';
+}
+</script>
+
+</body>
+</html>
