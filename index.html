@@ -2,106 +2,112 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Little Giggles | Learn • Play • Laugh • Grow</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#fffaf5;color:#333}
-header{position:sticky;top:0;background:#fff;padding:16px 8%;display:flex;justify-content:space-between;align-items:center;box-shadow:0 2px 10px rgba(0,0,0,.08);z-index:10}
-.logo{font-size:28px;font-weight:700;color:#ff5fa2}
-nav a{text-decoration:none;color:#444;margin:0 12px}
-.btn{background:#ff8c42;color:#fff;padding:12px 22px;border-radius:30px;text-decoration:none;font-weight:bold}
-.hero{padding:70px 8%;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;background:linear-gradient(135deg,#fff5d6,#e7f8ff)}
-.hero h1{font-size:52px;color:#ff5fa2}
-.hero p{font-size:20px;margin:20px 0;line-height:1.6}
-.hero img{width:100%;border-radius:25px}
-section{padding:70px 8%}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:24px}
-.card{background:#fff;border-radius:20px;padding:24px;box-shadow:0 5px 18px rgba(0,0,0,.08);text-align:center}
-.card h3{margin:12px 0}
-.cta{background:#7ed957;color:#fff;text-align:center;border-radius:30px;padding:60px}
-.cta input{padding:14px;width:260px;border:none;border-radius:10px;margin:8px}
-.cta button{padding:14px 30px;background:#ff5fa2;color:#fff;border:none;border-radius:10px;font-weight:bold;cursor:pointer}
-footer{background:#333;color:#fff;padding:35px;text-align:center}
-.small{color:#666;font-size:14px}
-@media(max-width:768px){
-.hero{grid-template-columns:1fr}
-.hero h1{font-size:38px}
-nav{display:none}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:Poppins,sans-serif;background:#0a1020;color:#fff;overflow-x:hidden}
+body:before{
+content:"";position:fixed;inset:0;
+background:
+radial-gradient(circle at 20% 20%,rgba(255,120,200,.25),transparent 30%),
+radial-gradient(circle at 80% 30%,rgba(0,255,200,.2),transparent 30%),
+radial-gradient(circle at 50% 80%,rgba(255,215,0,.18),transparent 35%),
+linear-gradient(135deg,#08111d,#111d3b,#17295c);
+z-index:-2}
+body:after{
+content:"";position:fixed;inset:0;
+background:url('https://images.unsplash.com/photo-1513151233558-d860c5398176?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+opacity:.12;filter:blur(1px);
+z-index:-3}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 7%;position:sticky;top:0;background:rgba(7,10,25,.65);backdrop-filter:blur(12px)}
+.logo{font-size:2rem;font-weight:800;color:#ffe45e}
+nav a{color:#fff;text-decoration:none;margin-left:20px}
+.btn{background:linear-gradient(90deg,#ff4fd8,#ffbf47);padding:15px 28px;border-radius:40px;color:#111;text-decoration:none;font-weight:700;display:inline-block}
+.hero{min-height:90vh;display:flex;align-items:center;justify-content:space-between;padding:7%}
+.hero-text{max-width:620px}
+.hero h1{font-size:4rem;line-height:1.1;margin-bottom:20px}
+.hero p{font-size:1.2rem;opacity:.9;margin-bottom:30px}
+.card{
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.15);
+backdrop-filter:blur(14px);
+border-radius:28px;padding:25px}
+.hero-art{width:420px;height:420px;border-radius:50%;
+background:radial-gradient(circle,#fff8,#fff0),linear-gradient(135deg,#ff6ec7,#7cf7ff,#ffe66d);
+display:flex;align-items:center;justify-content:center;
+font-size:8rem;box-shadow:0 0 70px rgba(255,255,255,.25)}
+section{padding:80px 7%}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.feature h3{margin:12px 0}
+.cta{text-align:center;background:linear-gradient(135deg,#ff66c4,#6ee7ff);color:#111;border-radius:35px;padding:60px}
+input{padding:15px;width:100%;border:none;border-radius:14px;margin:10px 0}
+footer{text-align:center;padding:40px;color:#ddd}
+@media(max-width:900px){
+.hero{flex-direction:column;text-align:center}
+.hero h1{font-size:2.8rem}
+.hero-art{width:280px;height:280px;font-size:5rem;margin-top:30px}
 }
 </style>
 </head>
 <body>
 
-<header>
-<div class="logo">🌈 Little Giggles</div>
 <nav>
+<div class="logo">🌈 Little Giggles</div>
+<div>
 <a href="#">Stories</a>
 <a href="#">Songs</a>
 <a href="#">Games</a>
 <a href="#">Parents</a>
-<a href="#">Pricing</a>
-</nav>
 <a class="btn" href="#stickers">FREE Stickers</a>
-</header>
+</div>
+</nav>
 
 <section class="hero">
-<div>
+<div class="hero-text">
 <h1>Learning That Feels Like Play.</h1>
-<p>Interactive stories, songs, games and creative adventures that help children aged 3–8 build confidence and a love of learning.</p>
+<p>Interactive stories, songs, games and creative adventures that help children aged 3–8 learn through fun.</p>
 <a class="btn" href="#stickers">🎁 Download FREE Sticker Pack</a>
-<p class="small">✔ Safe for Kids • ✔ New Adventures Every Week • ✔ Parent Friendly</p>
 </div>
-<div>
-<img src="https://placehold.co/700x700/png?text=Bella+Bunny+%26+Friends" alt="Little Giggles">
+
+<div class="hero-art">🐰</div>
+</section>
+
+<section>
+<h2 style="margin-bottom:30px">Why Parents Love Little Giggles</h2>
+<div class="grid">
+<div class="card feature"><h3>📚 Story Time</h3><p>Interactive read-along adventures.</p></div>
+<div class="card feature"><h3>🎵 Sing Along</h3><p>Original songs and nursery music.</p></div>
+<div class="card feature"><h3>🎮 Learn & Play</h3><p>Games that build real skills.</p></div>
+<div class="card feature"><h3>🎨 Creative Corner</h3><p>Coloring, drawing and stickers.</p></div>
 </div>
 </section>
 
 <section id="stickers">
-<h2>🎁 Get Your FREE Sticker Pack</h2>
-<p>Join the Little Giggles Club and instantly download printable stickers and learning activities.</p>
 <div class="cta">
-<h2>Download Your FREE Sticker Pack</h2>
-<p>Enter your details below.</p>
-<form>
-<input type="text" placeholder="Parent's Name"><br>
-<input type="email" placeholder="Email Address"><br>
-<button type="submit">Download Free Pack</button>
-</form>
+<h2>🎁 Get Your FREE Little Giggles Sticker Pack</h2>
+<p>Join the Little Giggles Club and receive printable stickers, activities and app updates.</p>
+<div style="max-width:420px;margin:25px auto">
+<input placeholder="Parent Name">
+<input placeholder="Email Address">
+<a class="btn" href="#">Download FREE Stickers</a>
+</div>
 </div>
 </section>
 
 <section>
-<h2>Meet the Friends</h2>
-<div class="cards">
-<div class="card"><h3>🐰 Bella Bunny</h3><p>Curious, kind and brave.</p></div>
-<div class="card"><h3>🐻 Benny Bear</h3><p>Funny, friendly and helpful.</p></div>
-<div class="card"><h3>🐊 Coco Crocodile</h3><p>Energetic adventurer who learns valuable lessons.</p></div>
-<div class="card"><h3>🐭 Millie Mouse</h3><p>Creative problem solver who loves books.</p></div>
+<h2 style="margin-bottom:25px">Meet Your Friends</h2>
+<div class="grid">
+<div class="card">🐰 <h3>Bella Bunny</h3><p>Curious, kind and brave.</p></div>
+<div class="card">🐻 <h3>Benny Bear</h3><p>Funny and helpful.</p></div>
+<div class="card">🐊 <h3>Coco Crocodile</h3><p>Energetic adventurer.</p></div>
+<div class="card">🐭 <h3>Millie Mouse</h3><p>Creative problem solver.</p></div>
 </div>
-</section>
-
-<section>
-<h2>Explore Little Giggles</h2>
-<div class="cards">
-<div class="card"><h3>📚 Story Time</h3></div>
-<div class="card"><h3>🎵 Sing Along</h3></div>
-<div class="card"><h3>🎮 Learning Games</h3></div>
-<div class="card"><h3>🎨 Creative Corner</h3></div>
-<div class="card"><h3>🏆 Rewards</h3></div>
-<div class="card"><h3>📱 App Coming Soon</h3></div>
-</div>
-</section>
-
-<section class="cta">
-<h2>Ready to Start Your Child's Learning Adventure?</h2>
-<p>Get your FREE sticker pack and be first to hear about the Little Giggles Learn & Play app.</p>
-<button>Join the Little Giggles Club</button>
 </section>
 
 <footer>
-<p><strong>Little Giggles</strong> — Learn • Play • Laugh • Grow 🌈</p>
-<p>© 2026 Little Giggles. All rights reserved.</p>
+<p>© 2026 Little Giggles • Learn • Play • Laugh • Grow 🌈</p>
 </footer>
 
 </body>
