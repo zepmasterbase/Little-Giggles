@@ -1,93 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Little Giggles Version 1.0</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<title>Little Giggles | Welcome to Little Giggles Land</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@latest"></script>
 <style>
-:root{--glass:rgba(255,255,255,.16);--line:rgba(255,255,255,.28);--pink:#ff62c8;--gold:#ffd95d}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;background:linear-gradient(180deg,#7ee4ff,#8c84ff 45%,#8aeda2);color:#fff}
-header{position:sticky;top:0;margin:12px auto;width:min(1280px,95%);display:flex;justify-content:space-between;align-items:center;padding:12px 20px;border-radius:999px;background:var(--glass);backdrop-filter:blur(18px);border:1px solid var(--line)}
-nav a{color:#fff;text-decoration:none;margin:0 10px}
-.logo{font:700 1.6rem Fredoka,sans-serif}
-.btn{display:inline-block;background:linear-gradient(90deg,var(--pink),var(--gold));padding:14px 24px;border-radius:999px;color:#222;text-decoration:none;font-weight:700}
-.hero{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;padding:60px 5%}
-.hero h1{font:700 clamp(2.8rem,6vw,5.2rem) Fredoka,sans-serif}
-.hero img{width:100%;border-radius:24px;background:rgba(255,255,255,.15)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;padding:0 5% 60px}
-.card{background:var(--glass);border:1px solid var(--line);backdrop-filter:blur(16px);padding:22px;border-radius:24px;text-align:center}
-.claim{max-width:700px;margin:0 auto 60px;background:var(--glass);padding:30px;border-radius:24px;border:1px solid var(--line)}
-.claim input{width:100%;padding:14px;border:none;border-radius:12px;margin:10px 0}
-.claim button{width:100%;padding:15px;border:none;border-radius:999px;background:linear-gradient(90deg,var(--pink),var(--gold));font-weight:700;cursor:pointer}
-#msg{display:none;margin-top:18px;padding:14px;border-radius:12px;background:#ffffff22}
-footer{padding:50px 20px;text-align:center;background:#ffffff18}
-.social{display:flex;justify-content:center;gap:18px;margin:20px 0}
-.social a{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#ffffff22;color:#fff}
-@media(max-width:900px){.hero{grid-template-columns:1fr}nav{display:none}}
+body{font-family:Poppins,sans-serif;background:linear-gradient(180deg,#76dfff,#8b7cff,#8deaa8);color:#fff}
+header{position:sticky;top:10px;z-index:99;width:min(1200px,96%);margin:12px auto;padding:14px 20px;border-radius:999px;background:rgba(255,255,255,.18);backdrop-filter:blur(16px);display:flex;justify-content:space-between;align-items:center}
+nav{display:flex;flex-wrap:wrap;gap:12px}
+nav a{color:#fff;text-decoration:none;font-weight:600}
+.hero{text-align:center;padding:80px 20px 60px}
+.hero h1{font:700 clamp(3rem,6vw,5rem) Fredoka,sans-serif}
+.hero p{max-width:760px;margin:18px auto;font-size:1.05rem}
+.cta{display:flex;justify-content:center;gap:16px;flex-wrap:wrap;margin-top:26px}
+.cta a{padding:14px 22px;border-radius:999px;background:#ff5fc5;color:#fff;text-decoration:none;font-weight:700}
+.section{padding:60px 5%}
+.section h2{text-align:center;font-family:Fredoka,sans-serif;font-size:2.2rem;margin-bottom:30px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:rgba(255,255,255,.16);backdrop-filter:blur(14px);border-radius:24px;padding:24px;text-align:center;transition:.25s}
+.card:hover{transform:translateY(-6px)}
+.card a{display:inline-block;margin-top:14px;padding:10px 18px;border-radius:999px;background:#6b63ff;color:#fff;text-decoration:none}
+.news{max-width:760px;margin:0 auto;background:rgba(255,255,255,.16);padding:28px;border-radius:24px}
+.news input{width:100%;padding:14px;margin:10px 0;border:none;border-radius:12px}
+.news button{width:100%;padding:14px;border:none;border-radius:999px;background:#ff5fc5;color:#fff;font-weight:700}
+#msg{display:none;margin-top:14px;background:rgba(255,255,255,.2);padding:12px;border-radius:12px}
+footer{padding:50px 20px;background:rgba(255,255,255,.12);text-align:center}
+.quick{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;max-width:900px;margin:20px auto}
+.quick a{color:#fff;text-decoration:none}
+.social{display:flex;justify-content:center;gap:16px;margin:22px}
+.social a{width:50px;height:50px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.2);color:#fff}
 </style>
 </head>
 <body>
 <header>
-<div class="logo">🌈 Little Giggles</div>
+<h2 style="font-family:Fredoka,sans-serif">🌈 Little Giggles</h2>
 <nav>
-<a href="#">Home</a><a href="#">Stories</a><a href="#">Songs</a><a href="#">Games</a><a href="#">Parents</a><a href="#">Sticker Club</a>
+<a href="index.html">Home</a>
+<a href="stories.html">Stories</a>
+<a href="songs.html">Songs</a>
+<a href="games.html">Games</a>
+<a href="characters.html">Characters</a>
+<a href="parents.html">Parents</a>
+<a href="sticker-club.html">Sticker Club</a>
+<a href="contact.html">Contact</a>
 </nav>
-<a class="btn" href="#claim">FREE Stickers</a>
 </header>
 
 <section class="hero">
-<div>
 <h1>Welcome to Little Giggles Land</h1>
-<p>Learn, play, sing and explore magical adventures with Bella Bunny, Benny Bear, Coco Crocodile and Millie Mouse.</p><br>
-<a class="btn" href="#claim">Claim Free Sticker Pack</a>
-</div>
-<div style="display:grid;grid-template-columns:repeat(2,1fr);gap:12px">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png">
+<p>A magical place where children can read, sing, play, learn, and grow with Bella Bunny, Benny Bear, Coco Crocodile and Millie Mouse.</p>
+<div class="cta">
+<a href="stories.html">📖 Stories</a>
+<a href="songs.html">🎵 Songs</a>
+<a href="games.html">🎮 Games</a>
+<a href="sticker-club.html">🎁 Sticker Club</a>
 </div>
 </section>
 
-<section class="grid">
-<div class="card">🏰<h3>Giggle Castle</h3></div>
-<div class="card">📖<h3>Story Tree</h3></div>
-<div class="card">🎵<h3>Music Meadow</h3></div>
-<div class="card">🎨<h3>Creative Garden</h3></div>
-<div class="card">🚂<h3>Singing Train</h3></div>
-<div class="card">🌋<h3>Bubble Volcano</h3></div>
+<section class="section">
+<h2>Explore Little Giggles</h2>
+<div class="grid">
+<div class="card"><h3>📚 Story Tree</h3><p>Enjoy magical adventures.</p><a href="stories.html">Open</a></div>
+<div class="card"><h3>🎵 Music Meadow</h3><p>Sing along with fun songs.</p><a href="songs.html">Open</a></div>
+<div class="card"><h3>🎮 Game Arcade</h3><p>Learning through play.</p><a href="games.html">Open</a></div>
+<div class="card"><h3>🐰 Meet the Friends</h3><p>Discover every character.</p><a href="characters.html">Open</a></div>
+<div class="card"><h3>👨‍👩‍👧 Parents Corner</h3><p>Helpful family resources.</p><a href="parents.html">Open</a></div>
+<div class="card"><h3>🎁 Sticker House</h3><p>Claim free printable stickers.</p><a href="sticker-club.html">Open</a></div>
+<div class="card"><h3>✉️ Contact</h3><p>Questions or partnerships.</p><a href="contact.html">Open</a></div>
+<div class="card"><h3>📱 Mobile App</h3><p>Coming Soon.</p><a href="#">Coming Soon</a></div>
+</div>
 </section>
 
-<section id="claim" class="claim">
-<h2 style="font-family:Fredoka,sans-serif;text-align:center">🎁 Claim Your FREE Sticker Pack</h2><br>
-<input id="parent" placeholder="Parent Name">
-<input id="child" placeholder="Child's First Name">
-<input id="email" type="email" placeholder="Parent Email">
-<button onclick="claim()">Claim My Free Stickers</button>
-<div id="msg">🎉 Thank you! Your free Little Giggles Sticker Pack has been reserved. Connect this form to Supabase or Firebase to deliver downloads automatically.</div>
+<section class="section">
+<div class="news">
+<h2 style="font-family:Fredoka,sans-serif;text-align:center">Join Our Newsletter</h2>
+<input id="name" placeholder="Parent Name">
+<input id="email" placeholder="Email Address">
+<button onclick="join()">Join Free</button>
+<div id="msg">🎉 Thanks for joining the Little Giggles community!</div>
+</div>
 </section>
 
 <footer>
-<h2 style="font-family:Fredoka,sans-serif">🌈 Little Giggles</h2>
-<p>Learn • Play • Laugh • Grow</p>
-<div class="social">
-<a href="https://www.tiktok.com/@little.giggles.tv4?_r=1&_t=ZS-989szt3VZWn" target="_blank"><i data-lucide="music-4"></i></a>
-<a href="https://www.facebook.com/share/1BbVb7brhg/" target="_blank"><i data-lucide="facebook"></i></a>
-<a href="https://www.instagram.com/gigglewithbunny?igsh=c3NjcjFkc2Fwc3lj" target="_blank"><i data-lucide="instagram"></i></a>
+<h2 style="font-family:Fredoka,sans-serif">Quick Links</h2>
+<div class="quick">
+<a href="index.html">Home</a>
+<a href="stories.html">Stories</a>
+<a href="songs.html">Songs</a>
+<a href="games.html">Games</a>
+<a href="characters.html">Characters</a>
+<a href="parents.html">Parents</a>
+<a href="sticker-club.html">Sticker Club</a>
+<a href="contact.html">Contact</a>
+<a href="privacy.html">Privacy Policy</a>
+<a href="terms.html">Terms of Use</a>
 </div>
-<p>© 2026 Little Giggles. All Rights Reserved.</p>
+<div class="social">
+<a href="https://www.tiktok.com/@little.giggles.tv4?_r=1&_t=ZS-989szt3VZWn"><i data-lucide="music-4"></i></a>
+<a href="https://www.facebook.com/share/1BbVb7brhg/"><i data-lucide="facebook"></i></a>
+<a href="https://www.instagram.com/gigglewithbunny?igsh=c3NjcjFkc2Fwc3lj"><i data-lucide="instagram"></i></a>
+</div>
+<p>© 2026 Little Giggles • Learn • Play • Laugh • Grow</p>
 </footer>
-
 <script>
 lucide.createIcons();
-function claim(){
-const p=parent.value.trim(),c=child.value.trim(),e=email.value.trim();
-if(!p||!c||!e){alert("Please complete all fields.");return;}
-msg.style.display="block";
+function join(){
+ if(!document.getElementById('name').value.trim()||!document.getElementById('email').value.trim()){alert('Please complete all fields.');return;}
+ document.getElementById('msg').style.display='block';
 }
 </script>
 </body>
