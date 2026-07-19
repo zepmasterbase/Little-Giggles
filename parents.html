@@ -1,0 +1,244 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Giggles | Parents</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest"></script>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{
+font-family:Poppins,sans-serif;
+background:linear-gradient(180deg,#7FE5FF,#8C84FF,#8AEDA2);
+color:#fff;
+}
+header{
+position:sticky;
+top:12px;
+margin:12px auto;
+width:min(1200px,95%);
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:14px 22px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+border-radius:999px;
+}
+header a{color:#fff;text-decoration:none;margin:0 8px}
+.hero{
+text-align:center;
+padding:70px 20px 40px;
+}
+.hero h1{
+font-family:Fredoka,sans-serif;
+font-size:clamp(2.8rem,6vw,4.8rem)
+}
+.hero p{
+max-width:760px;
+margin:20px auto;
+line-height:1.7;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+padding:20px 5% 70px;
+}
+.card{
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+border-radius:24px;
+padding:24px;
+}
+.card h3{
+font-family:Fredoka,sans-serif;
+margin-bottom:10px;
+}
+.newsletter{
+max-width:760px;
+margin:0 auto 70px;
+background:rgba(255,255,255,.15);
+backdrop-filter:blur(18px);
+padding:30px;
+border-radius:24px;
+}
+.newsletter input{
+width:100%;
+padding:14px;
+margin:10px 0;
+border:none;
+border-radius:12px;
+}
+.newsletter button{
+width:100%;
+padding:15px;
+border:none;
+border-radius:999px;
+background:#ff63c8;
+color:#fff;
+font-weight:700;
+cursor:pointer;
+}
+.success{
+display:none;
+margin-top:18px;
+padding:15px;
+background:rgba(255,255,255,.2);
+border-radius:12px;
+}
+footer{
+text-align:center;
+padding:45px 20px;
+background:rgba(255,255,255,.12);
+}
+.social{
+display:flex;
+justify-content:center;
+gap:16px;
+margin:20px 0;
+}
+.social a{
+width:50px;
+height:50px;
+display:flex;
+align-items:center;
+justify-content:center;
+border-radius:50%;
+background:rgba(255,255,255,.18);
+color:#fff;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h2 style="font-family:Fredoka,sans-serif">👨‍👩‍👧 Little Giggles</h2>
+
+<nav>
+<a href="index.html">Home</a>
+<a href="stories.html">Stories</a>
+<a href="songs.html">Songs</a>
+<a href="games.html">Games</a>
+<a href="characters.html">Characters</a>
+<a href="parents.html">Parents</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Parents Corner</h1>
+
+<p>
+Little Giggles is designed to encourage imagination, creativity,
+curiosity and joyful learning through stories, songs, games and positive adventures.
+Our goal is to create a fun experience that families can enjoy together.
+</p>
+</section>
+
+<section class="grid">
+
+<div class="card">
+<h3>📚 Educational Stories</h3>
+<p>Original adventures that encourage kindness, confidence, curiosity and imagination.</p>
+</div>
+
+<div class="card">
+<h3>🎵 Sing Together</h3>
+<p>Catchy songs that make learning fun through rhythm and repetition.</p>
+</div>
+
+<div class="card">
+<h3>🎮 Learn Through Play</h3>
+<p>Educational games covering letters, numbers, colours, shapes and memory skills.</p>
+</div>
+
+<div class="card">
+<h3>⭐ Reward System</h3>
+<p>Children earn stars and unlock stickers while celebrating effort and participation.</p>
+</div>
+
+<div class="card">
+<h3>🎁 Free Sticker Club</h3>
+<p>Join the Little Giggles Sticker Club and receive free printable rewards and updates.</p>
+</div>
+
+<div class="card">
+<h3>🔒 Family Friendly</h3>
+<p>Built with families in mind and focused on positive, age-appropriate experiences.</p>
+</div>
+
+</section>
+
+<section class="newsletter">
+
+<h2 style="font-family:Fredoka,sans-serif;text-align:center">
+💌 Join Our Parent Newsletter
+</h2>
+
+<input id="parent" placeholder="Parent Name">
+
+<input id="email" type="email" placeholder="Email Address">
+
+<button onclick="joinNews()">
+Join Free
+</button>
+
+<div class="success" id="done">
+🎉 Thank you for joining the Little Giggles Parent Community!
+</div>
+
+</section>
+
+<footer>
+
+<h2 style="font-family:Fredoka,sans-serif">
+🌈 Little Giggles
+</h2>
+
+<p>
+Learn • Play • Laugh • Grow
+</p>
+
+<div class="social">
+
+<a href="https://www.tiktok.com/@little.giggles.tv4?_r=1&_t=ZS-989szt3VZWn">
+<i data-lucide="music-4"></i>
+</a>
+
+<a href="https://www.facebook.com/share/1BbVb7brhg/">
+<i data-lucide="facebook"></i>
+</a>
+
+<a href="https://www.instagram.com/gigglewithbunny?igsh=c3NjcjFkc2Fwc3lj">
+<i data-lucide="instagram"></i>
+</a>
+
+</div>
+
+<p>© 2026 Little Giggles. All Rights Reserved.</p>
+
+</footer>
+
+<script>
+lucide.createIcons();
+
+function joinNews(){
+const p=document.getElementById("parent").value.trim();
+const e=document.getElementById("email").value.trim();
+
+if(!p || !e){
+alert("Please complete all fields.");
+return;
+}
+
+document.getElementById("done").style.display="block";
+}
+</script>
+
+</body>
+</html>
