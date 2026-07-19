@@ -2,162 +2,207 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Giggles Land</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Little Giggles V200</title>
 <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 <style>
 :root{
---sky:#73dfff;--violet:#8c80ff;--grass:#7de78d;--glass:rgba(255,255,255,.16);
---pink:#ff6ac9;--yellow:#ffd65c;
+--glass:rgba(255,255,255,.14);
+--line:rgba(255,255,255,.28);
+--pink:#ff5ec9;
+--gold:#ffd95d;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
 font-family:Poppins,sans-serif;
-background:linear-gradient(180deg,var(--sky),var(--violet) 50%,var(--grass));
-color:#fff;overflow-x:hidden;
+color:#fff;
+background:linear-gradient(180deg,#71dcff,#8d84ff 45%,#7de89d);
+overflow-x:hidden;
 }
 body:before{
-content:"";position:fixed;inset:0;pointer-events:none;
+content:"";
+position:fixed;inset:0;
 background:
-radial-gradient(circle at 15% 15%,rgba(255,255,255,.22),transparent 18%),
-radial-gradient(circle at 85% 10%,rgba(255,255,255,.18),transparent 20%);
+radial-gradient(circle at 15% 15%,rgba(255,255,255,.22),transparent 20%),
+radial-gradient(circle at 85% 25%,rgba(255,255,255,.18),transparent 18%);
+animation:bgmove 18s ease-in-out infinite alternate;
+pointer-events:none;
 }
+@keyframes bgmove{to{transform:translateY(-18px)}}
+.cloud{position:fixed;background:rgba(255,255,255,.22);border-radius:60px;filter:blur(2px);animation:drift linear infinite}
+.c1{width:180px;height:60px;top:80px;left:-220px;animation-duration:45s}
+.c2{width:240px;height:70px;top:180px;left:-260px;animation-duration:60s}
+@keyframes drift{to{transform:translateX(calc(100vw + 500px))}}
 header{
-position:fixed;top:18px;left:50%;transform:translateX(-50%);
-width:min(1280px,95%);
+position:fixed;top:14px;left:50%;transform:translateX(-50%);
+width:min(1220px,95%);
 display:flex;justify-content:space-between;align-items:center;
-padding:14px 24px;border-radius:999px;
-background:rgba(255,255,255,.12);
+padding:12px 20px;
+background:var(--glass);
 backdrop-filter:blur(18px);
-border:1px solid rgba(255,255,255,.25);
-z-index:100;
+border:1px solid var(--line);
+border-radius:999px;
+z-index:99;
 }
 .logo{font:700 1.6rem Fredoka,sans-serif}
-nav a{color:#fff;text-decoration:none;margin:0 12px;font-weight:600}
-.cta{background:linear-gradient(90deg,var(--pink),var(--yellow));padding:14px 24px;border-radius:999px;text-decoration:none;color:#111;font-weight:700;box-shadow:0 0 30px rgba(255,220,90,.5)}
+nav{display:flex;gap:18px}
+nav a{color:#fff;text-decoration:none;font-weight:600}
+.btn{
+display:inline-block;
+padding:15px 28px;
+border-radius:999px;
+text-decoration:none;
+font-weight:700;
+transition:.35s;
+}
+.primary{
+background:linear-gradient(90deg,var(--pink),var(--gold));
+color:#222;
+box-shadow:0 0 24px rgba(255,217,93,.7);
+animation:pulse 3s infinite;
+}
+.secondary{
+background:rgba(255,255,255,.16);
+color:#fff;border:1px solid rgba(255,255,255,.35);
+margin-left:12px;
+}
+.btn:hover{transform:translateY(-4px)}
+@keyframes pulse{50%{transform:scale(1.05);box-shadow:0 0 40px rgba(255,217,93,.95)}}
 .hero{
 min-height:100vh;
 display:grid;
-grid-template-columns:1.05fr .95fr;
+grid-template-columns:1.1fr .9fr;
 align-items:center;
-gap:40px;
 padding:120px 6% 60px;
+gap:40px;
 }
-.hero h1{font:700 clamp(3rem,6vw,5.5rem) Fredoka,sans-serif;line-height:1}
-.hero p{font-size:1.15rem;max-width:560px;margin:24px 0 34px}
-.buttons a{display:inline-block;padding:16px 28px;border-radius:999px;text-decoration:none;font-weight:700;margin-right:10px}
-.primary{background:#fff;color:#222}
-.secondary{border:2px solid #fff;color:#fff}
-.world{
-position:relative;height:650px;border-radius:36px;overflow:hidden;
-background:linear-gradient(#9cecff,#9384ff 55%,#79e38a);
-box-shadow:0 30px 70px rgba(0,0,0,.25);
+.hero h1{font:700 clamp(3rem,6vw,5.4rem) Fredoka,sans-serif;line-height:1.05}
+.hero p{font-size:1.15rem;max-width:600px;margin:24px 0 36px}
+.stage{
+background:var(--glass);
+border:1px solid var(--line);
+backdrop-filter:blur(18px);
+border-radius:36px;
+padding:24px;
+box-shadow:0 20px 60px rgba(0,0,0,.2)
 }
-.cloud{position:absolute;background:#fff;border-radius:999px;opacity:.8;animation:float 20s linear infinite}
-.c1{width:170px;height:60px;top:60px;left:-160px}
-.c2{width:140px;height:50px;top:130px;left:-260px;animation-duration:26s}
-.balloon{position:absolute;width:22px;height:30px;background:#ff6ac9;border-radius:50% 50% 45% 45%;top:85%;animation:rise 12s infinite}
-.b1{left:15%}.b2{left:70%;background:#ffd65c;animation-delay:4s}
-.sparkle{position:absolute;width:6px;height:6px;background:#fff;border-radius:50%;animation:twinkle 2s infinite}
-.s1{top:18%;left:25%}.s2{top:30%;right:20%}.s3{top:60%;left:60%}
-@keyframes float{to{transform:translateX(1700px)}}
-@keyframes rise{0%{transform:translateY(0);opacity:0}20%{opacity:1}100%{transform:translateY(-650px);opacity:0}}
-@keyframes twinkle{50%{transform:scale(2);opacity:.3}}
-.heroimg{position:absolute;bottom:0;filter:drop-shadow(0 20px 18px rgba(0,0,0,.25))}
-.bear{left:2%;max-height:58%}
-.bunny{left:30%;max-height:82%}
-.croc{right:2%;max-height:60%}
+.grid4{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.grid4 img{width:100%;border-radius:24px;background:#ffffff18;animation:float 5s ease-in-out infinite}
+.grid4 img:nth-child(2){animation-delay:1s}
+.grid4 img:nth-child(3){animation-delay:2s}
+.grid4 img:nth-child(4){animation-delay:3s}
+@keyframes float{50%{transform:translateY(-10px)}}
 section{padding:90px 6%}
-.title{font:700 2.4rem Fredoka,sans-serif;margin-bottom:28px}
-.destinations,.friends{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.title{text-align:center;font:700 2.5rem Fredoka,sans-serif;margin-bottom:34px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
 .card{
 background:var(--glass);
-backdrop-filter:blur(12px);
-border:1px solid rgba(255,255,255,.15);
-border-radius:26px;
+border:1px solid var(--line);
+border-radius:28px;
 padding:26px;
 text-align:center;
-transition:.3s;
+backdrop-filter:blur(16px);
+transition:.35s;
 }
 .card:hover{transform:translateY(-8px)}
-.card img{height:170px;object-fit:contain;max-width:100%}
-.club{
-max-width:900px;margin:auto;text-align:center;
-background:rgba(255,255,255,.18);
-backdrop-filter:blur(18px);
-border-radius:32px;padding:50px;
+.icon{font-size:2.4rem;margin-bottom:12px}
+.world{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+gap:18px;
 }
-.club input{width:min(500px,100%);padding:15px;border:none;border-radius:14px;margin:14px auto;display:block}
-footer{text-align:center;padding:40px;background:rgba(0,0,0,.08)}
+.world .card{min-height:180px}
+.signup{
+max-width:900px;
+margin:auto;
+background:var(--glass);
+border:1px solid var(--line);
+border-radius:36px;
+padding:48px;
+text-align:center;
+backdrop-filter:blur(18px);
+}
+input{
+width:min(500px,100%);
+display:block;
+margin:12px auto;
+padding:16px;
+border:none;
+border-radius:16px;
+}
+footer{text-align:center;padding:40px}
 @media(max-width:900px){
 .hero{grid-template-columns:1fr}
-.world{height:430px}
 nav{display:none}
+.secondary{display:block;margin:14px 0 0}
 }
 </style>
 </head>
 <body>
+<div class="cloud c1"></div><div class="cloud c2"></div>
+
 <header>
 <div class="logo">🌈 Little Giggles</div>
 <nav>
-<a href="#explore">Explore</a>
-<a href="#friends">Friends</a>
-<a href="#club">Club</a>
+<a href="#">Home</a>
+<a href="#">Stories</a>
+<a href="#">Learn</a>
+<a href="#">Parents</a>
+<a href="#">Club</a>
 </nav>
-<a class="cta" href="#club">🎁 FREE Stickers</a>
+<a class="btn primary" href="#club">🎁 FREE Stickers</a>
 </header>
 
 <section class="hero">
 <div>
 <h1>Welcome to Little Giggles Land</h1>
-<p>Discover magical stories, playful learning and unforgettable adventures with Bella Bunny, Benny Bear, Coco Crocodile and Millie Mouse.</p>
-<div class="buttons">
-<a class="primary" href="#explore">🌈 Start Exploring</a>
-<a class="secondary" href="#club">🎁 Join the Club</a>
-</div>
+<p>Where every click begins an adventure. Discover magical friends, joyful learning, songs, creativity and imagination in one beautiful world.</p>
+<a class="btn primary" href="#club">✨ Join Free</a>
+<a class="btn secondary" href="#world">🌈 Explore</a>
 </div>
 
+<div class="stage">
+<div class="grid4">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png" alt="Bella">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png" alt="Benny">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png" alt="Coco">
+<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png" alt="Millie">
+</div>
+</div>
+</section>
+
+<section id="world">
+<h2 class="title">Explore Little Giggles Land</h2>
 <div class="world">
-<div class="cloud c1"></div><div class="cloud c2"></div>
-<div class="balloon b1"></div><div class="balloon b2"></div>
-<div class="sparkle s1"></div><div class="sparkle s2"></div><div class="sparkle s3"></div>
-
-<img class="heroimg bear" src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png">
-<img class="heroimg bunny" src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png">
-<img class="heroimg croc" src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png">
+<div class="card"><div class="icon">🏰</div><h3>Giggle Castle</h3></div>
+<div class="card"><div class="icon">📖</div><h3>Story Tree</h3></div>
+<div class="card"><div class="icon">🎵</div><h3>Music Meadow</h3></div>
+<div class="card"><div class="icon">🎨</div><h3>Creative Garden</h3></div>
+<div class="card"><div class="icon">🚂</div><h3>Singing Train</h3></div>
+<div class="card"><div class="icon">🌋</div><h3>Bubble Volcano</h3></div>
+<div class="card"><div class="icon">⭐</div><h3>Rewards</h3></div>
+<div class="card"><div class="icon">🎁</div><h3>Sticker Club</h3></div>
 </div>
 </section>
 
-<section id="explore">
-<h2 class="title">🗺️ Explore Little Giggles Land</h2>
-<div class="destinations">
-<div class="card">🏰<h3>Giggle Castle</h3><p>Read magical stories.</p></div>
-<div class="card">🚂<h3>Singing Train</h3><p>Sing cheerful songs.</p></div>
-<div class="card">🌳<h3>Story Tree</h3><p>Discover adventures.</p></div>
-<div class="card">🎨<h3>Rainbow Studio</h3><p>Create colourful art.</p></div>
-<div class="card">🌋<h3>Bubble Volcano</h3><p>Play learning games.</p></div>
-<div class="card">⭐<h3>Sticker House</h3><p>Collect rewards.</p></div>
-</div>
-</section>
-
-<section id="friends">
-<h2 class="title">🌈 Meet Your Friends</h2>
-<div class="friends">
-<div class="card"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png"><h3>Bella Bunny</h3></div>
-<div class="card"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png"><h3>Benny Bear</h3></div>
-<div class="card"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png"><h3>Coco Crocodile</h3></div>
-<div class="card"><div style="height:170px;display:flex;align-items:center;justify-content:center;background:rgba(255,255,255,.08);border-radius:18px">Millie Mouse Artwork</div><h3>Millie Mouse</h3></div>
+<section>
+<h2 class="title">Meet Your Friends</h2>
+<div class="cards">
+<div class="card"><h3>🐰 Bella Bunny</h3><p>Curious • Kind • Brave</p></div>
+<div class="card"><h3>🐻 Benny Bear</h3><p>Funny • Helpful</p></div>
+<div class="card"><h3>🐊 Coco Crocodile</h3><p>Explorer • Adventurous</p></div>
+<div class="card"><h3>🐭 Millie Mouse</h3><p>Creative • Loves Reading</p></div>
 </div>
 </section>
 
 <section id="club">
-<div class="club">
-<h2 class="title">🎁 Join the Little Giggles Club</h2>
-<p>Get free stickers, printable activities and updates about new adventures.</p>
-<input placeholder="Parent Name">
-<input placeholder="Email Address">
-<a class="cta" href="#">Get My FREE Sticker Pack</a>
+<div class="signup">
+<h2 class="title">Join the Little Giggles Club</h2>
+<p>Download free stickers, printable activities and be first to discover new adventures.</p>
+<input placeholder="Parent name">
+<input placeholder="Email address">
+<a class="btn primary" href="#">🎁 Get FREE Sticker Pack</a>
 </div>
 </section>
 
