@@ -1,99 +1,79 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Little Giggles Music Club</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
+<title>Little Giggles Music</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
-body{font-family:Poppins,sans-serif;color:#fff;background:linear-gradient(180deg,#08152d,#241d74 45%,#573bd3 75%,#82eaff);overflow-x:hidden}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 2px);background-size:90px 90px;opacity:.45;animation:fall 35s linear infinite}
-@keyframes fall{from{transform:translateY(-120px)}to{transform:translateY(180px)}}
-header{position:fixed;top:15px;left:50%;transform:translateX(-50%);width:min(760px,94%);display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-radius:999px;background:rgba(8,15,50,.6);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.15);box-shadow:0 0 18px #6ffcff;animation:pulse 3s infinite;z-index:10}
-@keyframes pulse{50%{box-shadow:0 0 34px #6ffcff}}
-.logo{display:flex;align-items:center;gap:8px;font:700 1.2rem Fredoka,sans-serif}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;font-size:.9rem}
-.hero{min-height:92vh;display:flex;align-items:center;justify-content:center;padding:110px 20px 40px}
-.panel{max-width:950px;text-align:center;padding:48px;border-radius:30px;background:rgba(10,15,45,.58);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.14)}
-.disco{font-size:70px;animation:spin 10s linear infinite;display:inline-block}
-@keyframes spin{to{transform:rotate(360deg)}}
-h1{font:700 clamp(3rem,7vw,5rem) Fredoka,sans-serif;text-shadow:0 4px 16px rgba(0,0,0,.7)}
-p{margin:20px auto;max-width:700px;line-height:1.8}
-.btn{display:inline-flex;gap:8px;align-items:center;padding:14px 24px;border-radius:999px;background:linear-gradient(90deg,#ff5bc7,#6d6dff);color:#fff;text-decoration:none;font-weight:700}
-.section{padding:70px 5%}
-.title{text-align:center;font:700 2.2rem Fredoka;margin-bottom:30px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:22px}
-.card,.player,.stats{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:24px}
-.card i{color:#91fbff;width:42px;height:42px}
-.card h3{margin:12px 0;font-family:Fredoka}
-.player{max-width:850px;margin:0 auto;text-align:center}
-.controls{display:flex;justify-content:center;gap:18px;margin-top:20px}
-.controls button{width:58px;height:58px;border:none;border-radius:50%;background:linear-gradient(90deg,#ff5bc7,#6d6dff);color:#fff}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:18px;text-align:center}
-.stat b{display:block;font-size:2rem;font-family:Fredoka}
-footer{text-align:center;padding:40px;background:rgba(0,0,0,.15)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Baloo 2',sans-serif;background:linear-gradient(#6dcfff,#dff8ff,#95df78);color:#20344a}
+.hero{min-height:70vh;background:linear-gradient(rgba(15,35,90,.45),rgba(15,35,90,.6)),url('https://payhip.com/cdn-cgi/image/format=auto,width=1500/https://pe56d.s3.amazonaws.com/o_1jueqbnt319jm661hemmj51osb15.png') center/cover no-repeat;display:flex;align-items:center;padding:24px}
+.glass{max-width:1200px;margin:auto;background:rgba(255,255,255,.15);backdrop-filter:blur(18px);border-radius:30px;padding:36px;border:1px solid rgba(255,255,255,.3);color:#fff}
+h1{font-size:clamp(3rem,7vw,5rem)}
+.hero p{max-width:700px;margin:16px 0 24px}
+.btn{display:inline-block;text-decoration:none;padding:14px 24px;border-radius:999px;font-weight:700;margin:6px}
+.p{background:#7b4dff;color:#fff}.g{background:#ffb300;color:#fff}.w{background:#fff;color:#6b4dff}
+.wrap{max-width:1200px;margin:50px auto;padding:0 20px}
+.feature{background:#fff;border-radius:24px;padding:20px;box-shadow:0 15px 35px rgba(0,0,0,.12)}
+.video{aspect-ratio:16/9;border-radius:18px;background:#222;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:24px}
+.card{background:#fff;border-radius:20px;padding:18px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.thumb{height:130px;border-radius:14px;background:linear-gradient(135deg,#7b4dff,#ff7ab6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;margin-bottom:12px}
+.playlists{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:24px}
+.play{border-radius:22px;padding:22px;color:#fff}
+.a{background:#ffb300}.b{background:#7b4dff}.c{background:#39b54a}.d{background:#ff5fa5}
+.cta{background:linear-gradient(135deg,#6d4dff,#00c6ff);border-radius:28px;padding:45px;text-align:center;color:#fff;margin-top:50px}
+footer{text-align:center;padding:40px}
 </style>
 </head>
 <body>
-<header>
-<div class="logo"><i data-lucide="sparkles"></i>Little Giggles</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="stories.html">Stories</a>
-<a href="characters.html">Characters</a>
-<a href="sticker-club.html">Free Stickers</a>
-</nav>
-</header>
-
 <section class="hero">
-<div class="panel">
-<div class="disco">🪩</div>
-<h1>Little Giggles Music Club</h1>
-<p>Dance, sing, learn and smile with magical songs for every part of the day. Discover cheerful tunes that make learning fun.</p>
-<a class="btn" href="#player"><i data-lucide="play-circle"></i>Play Today's Song</a>
+<div class="glass">
+<h1>Sing Along with Little Giggles 🎵</h1>
+<p>Watch nursery rhymes, bedtime songs, morning routines, dance songs and learning music with Bella, Benny, Coco and Millie.</p>
+<a class="btn p" href="#">▶ Watch Now</a>
+<a class="btn g" href="#">🎵 Latest Songs</a>
+<a class="btn w" href="#">🌙 Bedtime Collection</a>
 </div>
 </section>
 
-<section class="section">
-<div class="title">Music Adventures</div>
+<div class="wrap">
+<h2>Featured Video</h2>
+<div class="feature">
+<div class="video">▶ Featured Music Video Player</div>
+<h3 style="margin-top:16px">Bella's Rainbow Song</h3>
+<p>Ages 3–8 • 3:12 • Sing Along</p>
+<a class="btn p" href="#">▶ Play</a>
+<a class="btn w" href="#">❤️ Favourite</a>
+</div>
+
+<h2 style="margin-top:40px">Browse Collections</h2>
+<div class="playlists">
+<div class="play a"><h3>🌞 Morning Songs</h3><p>Wake Up • Brush Teeth • Breakfast • Ready for School</p></div>
+<div class="play b"><h3>🌙 Bedtime Songs</h3><p>Sleep Tight • Goodnight Moon • Lullabies</p></div>
+<div class="play c"><h3>🎓 Learning Songs</h3><p>ABC • Numbers • Colours • Shapes</p></div>
+<div class="play d"><h3>💃 Dance Songs</h3><p>Freeze Dance • Animal Dance • Rainbow Dance</p></div>
+</div>
+
+<h2 style="margin-top:40px">Music Library</h2>
 <div class="grid">
-<div class="card"><i data-lucide="moon-star"></i><h3>Bedtime Songs</h3><p>Gentle songs for peaceful dreams.</p></div>
-<div class="card"><i data-lucide="sunrise"></i><h3>Rise & Shine</h3><p>Wake up happy every morning.</p></div>
-<div class="card"><i data-lucide="hash"></i><h3>Numbers Songs</h3><p>Count, clap and learn.</p></div>
-<div class="card"><i data-lucide="book-open"></i><h3>ABC Songs</h3><p>Letters through music.</p></div>
-<div class="card"><i data-lucide="palette"></i><h3>Colours</h3><p>Sing every rainbow colour.</p></div>
-<div class="card"><i data-lucide="heart"></i><h3>Kindness Songs</h3><p>Sharing, caring and friendship.</p></div>
+<div class="card"><div class="thumb">🐰 Bella's Rainbow Song</div><p>3:12 • Ages 3–5</p></div>
+<div class="card"><div class="thumb">🐻 Benny's Honey Dance</div><p>2:58 • Ages 3–6</p></div>
+<div class="card"><div class="thumb">🐊 Coco Splash Song</div><p>3:05 • Ages 3–6</p></div>
+<div class="card"><div class="thumb">🐭 Millie's Music Time</div><p>2:47 • Ages 3–8</p></div>
+<div class="card"><div class="thumb">⭐ Twinkle Dreams</div><p>Bedtime</p></div>
+<div class="card"><div class="thumb">☀️ Good Morning Song</div><p>Morning Routine</p></div>
 </div>
-</section>
 
-<section class="section" id="player">
-<div class="player">
-<div class="disco" style="font-size:54px">🪩</div>
-<h2 style="font-family:Fredoka">Now Playing</h2>
-<p>Rise & Shine 🌞</p>
-<div class="controls">
-<button><i data-lucide="skip-back"></i></button>
-<button><i data-lucide="play"></i></button>
-<button><i data-lucide="skip-forward"></i></button>
-<button><i data-lucide="heart"></i></button>
+<div class="cta">
+<h2>Ready to Sing Together?</h2>
+<p>Discover joyful songs that help children learn, dance, relax and grow every day.</p>
+<a class="btn w" href="#">🌈 Start Watching Free</a>
 </div>
 </div>
-</section>
 
-<section class="section">
-<div class="title">Music Rewards</div>
-<div class="stats">
-<div class="stat"><b>12</b>Songs Played</div>
-<div class="stat"><b>5⭐</b>Listening Streak</div>
-<div class="stat"><b>3🏆</b>Badges Earned</div>
-<div class="stat"><b>🎁</b>Sticker Unlock</div>
-</div>
-</section>
-
-<footer>© 2026 Little Giggles • Learn • Play • Laugh • Grow</footer>
-<script>lucide.createIcons();</script>
+<footer>© 2026 Little Giggles • Learn • Play • Laugh • Grow 🌈</footer>
 </body>
 </html>
