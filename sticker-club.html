@@ -1,105 +1,80 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Little Giggles Sticker Club</title>
+<title>Little Giggles • Free Starter Pack</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Baloo 2',sans-serif;background:linear-gradient(135deg,#6aa8ff,#ffeef8);color:#233}
-.wrap{max-width:1300px;margin:auto;padding:24px}
-.hero,.glass{background:rgba(255,255,255,.78);backdrop-filter:blur(14px);border-radius:24px;border:1px solid rgba(255,255,255,.7)}
-.hero{padding:48px;text-align:center}
-h1{font-size:clamp(2.6rem,6vw,4.5rem)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin:30px 0}
-.pack{padding:18px}
-.pack img{width:100%;border-radius:18px}
-button,.btn{padding:14px 22px;border:none;border-radius:999px;background:#705cff;color:#fff;font-weight:700;cursor:pointer}
-.lock{margin-top:12px}
-#signupModal{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);align-items:center;justify-content:center}
-.modal{max-width:430px;width:92%;padding:24px}
-input{width:100%;padding:12px;margin:8px 0;border-radius:10px;border:1px solid #ddd}
-.success{display:none;background:#e8fff0;color:#136c35;padding:14px;border-radius:12px;margin:20px 0}
-nav{display:flex;justify-content:space-between;padding:16px 20px;margin-bottom:20px}
-small{color:#666}
-</style>
-</head>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Baloo 2',sans-serif;background:linear-gradient(#6dcfff,#dff8ff,#95df78);color:#20344a}
+.hero{min-height:72vh;background:linear-gradient(rgba(15,35,90,.45),rgba(15,35,90,.6)),url('https://payhip.com/cdn-cgi/image/format=auto,width=1500/https://pe56d.s3.amazonaws.com/o_1jueqbnt319jm661hemmj51osb15.png') center/cover no-repeat;display:flex;align-items:center;padding:24px}
+.glass{max-width:1200px;margin:auto;background:rgba(255,255,255,.15);backdrop-filter:blur(18px);border-radius:30px;padding:36px;border:1px solid rgba(255,255,255,.3);color:#fff}
+h1{font-size:clamp(3rem,7vw,5rem)} .hero p{max-width:720px;margin:16px 0 24px}
+.btn{display:inline-block;text-decoration:none;padding:14px 24px;border-radius:999px;font-weight:700;margin:6px}
+.p{background:#7b4dff;color:#fff}.g{background:#ffb300;color:#fff}.w{background:#fff;color:#6b4dff}
+.wrap{max-width:1200px;margin:50px auto;padding:0 20px}
+.feature,.card,.signup{background:#fff;border-radius:24px;padding:22px;box-shadow:0 15px 35px rgba(0,0,0,.12)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:24px}
+.thumb{height:140px;border-radius:16px;background:linear-gradient(135deg,#7b4dff,#ff7ab6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;margin-bottom:12px}
+.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;margin-top:24px}
+.benefit{border-radius:22px;padding:22px;color:#fff}
+.a{background:#ffb300}.b{background:#7b4dff}.c{background:#39b54a}.d{background:#ff5fa5}
+.cta{background:linear-gradient(135deg,#6d4dff,#00c6ff);border-radius:28px;padding:45px;text-align:center;color:#fff;margin-top:50px}
+input{width:100%;padding:14px;margin:8px 0;border-radius:12px;border:1px solid #ddd}
+button{width:100%;padding:16px;border:none;border-radius:999px;background:#7b4dff;color:#fff;font:700 1rem 'Baloo 2'}
+footer{text-align:center;padding:40px}
+</style></head>
 <body>
+<section class="hero"><div class="glass">
+<h1>🌈 Get Your Free Starter Pack</h1>
+<p>Unlock printable stickers, storybooks, songs, colouring pages and activities designed for children aged 3–8.</p>
+<a class="btn p" href="#signup">✨ Get My Free Starter Pack</a>
+<a class="btn w" href="#packs">👀 Preview Collection</a>
+</div></section>
+
 <div class="wrap">
-<nav class="glass"><strong>🌈 Little Giggles Sticker Club</strong><span>Stories • Songs • Stickers • Family Hub</span></nav>
-
-<section class="hero">
-<h1>Collect Magical Sticker Packs</h1>
-<p>Create a free parent account to unlock printable stickers, stories and songs.</p>
-</section>
-
-<div id="success" class="success">
-🎉 Welcome! Your account has been created (demo). Sticker downloads are now unlocked.
-<a class="btn" href="parents.html" style="text-decoration:none;margin-left:10px;">Go to Family Hub →</a>
-</div>
-
+<div class="feature">
+<h2>📦 Inside Your Free Starter Pack</h2>
 <div class="grid">
-<div class="glass pack">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png">
-<h3>Bella Bunny Pack</h3>
-<button class="lock" onclick="unlock(this)">🔒 Unlock Free</button>
-</div>
-<div class="glass pack">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png">
-<h3>Benny Bear Pack</h3>
-<button class="lock" onclick="unlock(this)">🔒 Unlock Free</button>
-</div>
-<div class="glass pack">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png">
-<h3>Coco Crocodile Pack</h3>
-<button class="lock" onclick="unlock(this)">🔒 Unlock Free</button>
-</div>
-<div class="glass pack">
-<img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png">
-<h3>Millie Mouse Pack</h3>
-<button class="lock" onclick="unlock(this)">🔒 Unlock Free</button>
+<div class="card">⭐ 40 Printable Stickers</div>
+<div class="card">📖 2 Storybooks</div>
+<div class="card">🎵 5 Sing-Along Songs</div>
+<div class="card">🎨 Colouring Pages & Activities</div>
 </div>
 </div>
 
-<p><small>This mockup demonstrates the user flow. Replace the simulated sign-up with your Supabase authentication and download logic.</small></p>
+<h2 style="margin-top:40px">Meet the Collection</h2>
+<div id="packs" class="grid">
+<div class="card"><div class="thumb">🐰 Bella's Garden</div><a class="btn p" href="#signup">🔒 Unlock Free</a></div>
+<div class="card"><div class="thumb">🐻 Benny's Camp</div><a class="btn p" href="#signup">🔒 Unlock Free</a></div>
+<div class="card"><div class="thumb">🐊 Coco's Lagoon</div><a class="btn p" href="#signup">🔒 Unlock Free</a></div>
+<div class="card"><div class="thumb">🐭 Millie's Studio</div><a class="btn p" href="#signup">🔒 Unlock Free</a></div>
 </div>
 
-<div id="signupModal">
-<div class="glass modal">
-<h2>Create Free Parent Account</h2>
-<input placeholder="Parent name">
-<input type="email" placeholder="Email">
+<h2 style="margin-top:40px">Why Families Love Little Giggles</h2>
+<div class="benefits">
+<div class="benefit a"><h3>📚 Learn</h3><p>Stories encourage reading and language development.</p></div>
+<div class="benefit b"><h3>🎵 Sing</h3><p>Catchy songs make learning memorable.</p></div>
+<div class="benefit c"><h3>🎨 Create</h3><p>Printable activities inspire creativity.</p></div>
+<div class="benefit d"><h3>🎁 Monthly Surprises</h3><p>Fresh resources released regularly.</p></div>
+</div>
+
+<div id="signup" class="signup" style="margin-top:40px">
+<h2>✨ Create Your Free Family Account</h2>
+<input placeholder="Parent Name">
+<input type="email" placeholder="Email Address">
 <input type="password" placeholder="Password">
-<button onclick="completeSignup()">Create Account</button>
-</div>
+<input placeholder="Child Name (Optional)">
+<button>Create Account & Unlock Everything</button>
+<p style="margin-top:12px;color:#666">After connecting Supabase, submit this form, unlock downloads instantly and redirect returning users to <strong>parents.html</strong>.</p>
 </div>
 
-<script>
-let pendingButton=null;
-function unlock(btn){
-  pendingButton=btn;
-  if(localStorage.getItem("lgSignedIn")==="true"){
-    enableDownload(btn);
-  }else{
-    document.getElementById("signupModal").style.display="flex";
-  }
-}
-function completeSignup(){
-  localStorage.setItem("lgSignedIn","true");
-  document.getElementById("signupModal").style.display="none";
-  document.getElementById("success").style.display="block";
-  document.querySelectorAll(".lock").forEach(enableDownload);
-}
-function enableDownload(btn){
-  btn.textContent="⬇ Download Sticker Pack";
-  btn.onclick=function(){alert("Replace this demo with your real download + Supabase tracking.");}
-}
-if(localStorage.getItem("lgSignedIn")==="true"){
- document.getElementById("success").style.display="block";
- document.querySelectorAll(".lock").forEach(enableDownload);
-}
-</script>
-</body>
-</html>
+<div class="cta">
+<h2>Ready for Today's Adventure?</h2>
+<p>Join Little Giggles and start learning through play today.</p>
+<a class="btn w" href="#signup">🌈 Get My Free Starter Pack</a>
+</div>
+</div>
+<footer>© 2026 Little Giggles • Learn • Play • Laugh • Grow 🌈</footer>
+</body></html>
