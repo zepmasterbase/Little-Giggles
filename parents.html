@@ -3,105 +3,91 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Little Giggles Family Hub Mockup</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Little Giggles Family Hub</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/lucide-static@0.542.0/font/lucide.css">
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Baloo 2',sans-serif;background:#eef6ff;color:#223}
-body:before{content:"";position:fixed;inset:0;z-index:-1;background:
-linear-gradient(rgba(65,120,255,.25),rgba(255,255,255,.35)),
-url('https://payhip.com/cdn-cgi/image/format=auto,width=1600/https://pe56d.s3.amazonaws.com/o_1jueqbnt319jm661hemmj51osb15.png') center/cover}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Baloo 2',sans-serif;background:linear-gradient(135deg,#79b8ff,#fff3fb);color:#233}
 .wrap{max-width:1280px;margin:auto;padding:24px}
-.glass{background:rgba(255,255,255,.72);backdrop-filter:blur(16px);border-radius:24px;border:1px solid rgba(255,255,255,.7);box-shadow:0 12px 30px rgba(0,0,0,.08)}
-header{display:flex;justify-content:space-between;align-items:center;padding:18px 24px}
+.glass{background:rgba(255,255,255,.75);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);border-radius:24px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 22px}
+.brand{font-weight:800;font-size:1.4rem}
+.logout{display:flex;align-items:center;gap:8px;text-decoration:none;background:#ff5b6e;color:#fff;padding:10px 18px;border-radius:999px}
 .hero{padding:42px;text-align:center;margin:24px 0}
-.hero h1{font-size:clamp(2.5rem,6vw,4.4rem)}
-.btn{display:inline-block;margin-top:18px;padding:14px 24px;background:#6d5cff;color:#fff;border-radius:999px;text-decoration:none;font-weight:700}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
 .card{padding:22px}
-.progress{height:12px;background:#ddd;border-radius:99px;overflow:hidden;margin:10px 0}
-.progress span{display:block;height:100%;width:70%;background:linear-gradient(90deg,#6d5cff,#ff71b8)}
-.children{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px;margin:24px 0}
-footer{padding:30px;text-align:center;color:#555}
-ul{padding-left:20px}
+.progress{height:12px;background:#ddd;border-radius:999px;overflow:hidden;margin:10px 0}
+.progress span{display:block;height:100%;width:72%;background:linear-gradient(90deg,#6d5cff,#ff6fb6)}
+ul{padding-left:18px}
+footer{text-align:center;padding:30px;color:#555}
 </style>
 </head>
 <body>
 <div class="wrap">
-<header class="glass">
-<h2>🌈 Little Giggles • Family Hub</h2>
-<div>🏠 Home &nbsp; 📚 Library &nbsp; ⭐ Stickers &nbsp; 🎵 Songs &nbsp; 👨‍👩‍👧 Family Hub</div>
-</header>
+<nav class="glass">
+<div class="brand">🌈 Little Giggles Family Hub</div>
+<a href="#" class="logout" onclick="logout(event)">
+<i class="icon-log-out"></i> Logout
+</a>
+</nav>
 
 <section class="glass hero">
-<h1>Welcome Back, Parent! 👋</h1>
-<p>Bella Bunny has a brand-new adventure waiting today. Continue your family's learning journey with stories, songs, games and stickers.</p>
-<a class="btn" href="#">Continue Learning</a>
+<h1>Welcome Back! 👋</h1>
+<p>Manage your family's stories, songs, stickers and learning journey.</p>
 </section>
 
 <div class="grid">
-<div class="glass card"><h3>📖 Continue Reading</h3><p>Bella's Rainbow Adventure</p></div>
-<div class="glass card"><h3>🎵 Continue Watching</h3><p>Counting Song</p></div>
-<div class="glass card"><h3>🎁 Today's Surprise</h3><p>Claim today's free sticker pack.</p></div>
-<div class="glass card"><h3>🏆 Learning Journey</h3><div class="progress"><span></span></div><p>70% weekly goal completed.</p></div>
-</div>
-
-<h2 style="margin:28px 0 14px">👨‍👩‍👧 My Children</h2>
-<div class="children">
 <div class="glass card">
-<h3>👧 Emma (Age 4)</h3>
-<p>Favourite: Bella Bunny</p>
-<div class="progress"><span style="width:60%"></span></div>
-<p>24 / 40 Bella Stickers</p>
+<h3>📖 Continue Reading</h3>
+<p>Bella's Rainbow Adventure</p>
 </div>
 <div class="glass card">
-<h3>👦 Noah (Age 6)</h3>
-<p>Favourite: Benny Bear</p>
-<div class="progress"><span style="width:82%"></span></div>
-<p>33 / 40 Benny Stickers</p>
+<h3>🎵 Continue Watching</h3>
+<p>Counting Song</p>
 </div>
+<div class="glass card">
+<h3>🎁 Today's Reward</h3>
+<p>Free Sticker Pack</p>
+</div>
+<div class="glass card">
+<h3>🏆 Weekly Progress</h3>
+<div class="progress"><span></span></div>
+<p>72% Complete</p>
 </div>
 
-<div class="grid">
 <div class="glass card">
 <h3>⭐ Sticker Collection</h3>
-<ul>
-<li>Bella's Garden</li>
-<li>Benny's Camp</li>
-<li>Coco's Lagoon</li>
-<li>Millie's Studio</li>
-</ul>
+<ul><li>Bella Bunny</li><li>Benny Bear</li><li>Coco Crocodile</li><li>Millie Mouse</li></ul>
 </div>
+
+<div class="glass card">
+<h3>📥 Downloads</h3>
+<ul><li>Sticker Packs</li><li>Colouring Pages</li><li>Activity Sheets</li></ul>
+</div>
+
 <div class="glass card">
 <h3>❤️ Favourites</h3>
-<ul>
-<li>Stories</li>
-<li>Songs</li>
-<li>Games</li>
-<li>Sticker Packs</li>
-</ul>
+<ul><li>Stories</li><li>Songs</li><li>Games</li></ul>
 </div>
-<div class="glass card">
-<h3>📅 Monthly Releases</h3>
-<ul>
-<li>Ocean Pack ✓</li>
-<li>Dinosaur Pack 🔒</li>
-<li>Holiday Pack 🔒</li>
-</ul>
-</div>
+
 <div class="glass card">
 <h3>👨‍👩‍👧 Parent Corner</h3>
-<ul>
-<li>Learning tips</li>
-<li>Printable activities</li>
-<li>Bedtime reading guides</li>
-<li>Newsletter settings</li>
-</ul>
+<ul><li>Learning Tips</li><li>Monthly Newsletter</li><li>Account Settings</li></ul>
 </div>
 </div>
 
 <footer>© Little Giggles • Learn • Play • Laugh • Grow 🌈</footer>
 </div>
+
+<script>
+function logout(e){
+ e.preventDefault();
+ localStorage.removeItem("lgSignedIn");
+ // Replace with Supabase signOut() when connected.
+ window.location.href="index.html";
+}
+</script>
 </body>
 </html>
