@@ -3,104 +3,99 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Little Giggles | Story Tree</title>
-<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@latest"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Little Giggles Story Library</title>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:Poppins,sans-serif;color:#fff;overflow-x:hidden;background:linear-gradient(180deg,#08162f,#251f76 45%,#5d3ed5 78%,#85ecff)}
-body:before{content:"";position:fixed;inset:0;pointer-events:none;background-image:radial-gradient(#fff 1px,transparent 2px);background-size:90px 90px;opacity:.45;animation:stars 40s linear infinite}
-@keyframes stars{from{transform:translateY(-120px)}to{transform:translateY(180px)}}
-header{position:fixed;top:15px;left:50%;transform:translateX(-50%);width:min(760px,94%);display:flex;justify-content:space-between;align-items:center;padding:12px 18px;border-radius:999px;background:rgba(8,15,50,.6);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.15);box-shadow:0 0 20px #79fff6;animation:pulse 3s infinite;z-index:20}
-@keyframes pulse{50%{box-shadow:0 0 36px #79fff6}}
-.logo{display:flex;gap:8px;align-items:center;font:700 1.2rem Fredoka}
-nav{display:flex;gap:15px;flex-wrap:wrap}
-nav a{color:#fff;text-decoration:none;font-size:.9rem}
-.hero{min-height:95vh;display:flex;justify-content:center;align-items:center;padding:110px 20px 40px}
-.heroBox{max-width:920px;text-align:center;padding:50px;border-radius:30px;background:rgba(10,15,45,.58);backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,.15)}
-.tree{font-size:72px;animation:float 3s ease-in-out infinite}
-@keyframes float{50%{transform:translateY(-10px)}}
-h1{font:700 clamp(3rem,7vw,5rem) Fredoka;text-shadow:0 4px 16px rgba(0,0,0,.7)}
-p{max-width:720px;margin:20px auto;line-height:1.8}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:14px 24px;border-radius:999px;background:linear-gradient(90deg,#ff63c8,#6c6cff);text-decoration:none;color:#fff;font-weight:700}
-.section{padding:70px 5%}
-.title{text-align:center;font:700 2.2rem Fredoka;margin-bottom:28px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-.card,.quest,.rewards{background:rgba(255,255,255,.08);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.14);border-radius:24px;padding:24px}
-.card h3{margin:12px 0;font-family:Fredoka}
-.card i{color:#9efcff;width:42px;height:42px}
-.quest ul{margin-left:20px;line-height:2}
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:18px}
-.stat{text-align:center}
-.stat b{display:block;font:700 2rem Fredoka}
-footer{text-align:center;padding:40px;background:rgba(0,0,0,.15)}
+body{font-family:'Baloo 2',sans-serif;background:linear-gradient(#78d5ff,#eafcff,#9de07d);color:#234;line-height:1.5}
+.hero{min-height:65vh;background:linear-gradient(rgba(20,60,120,.45),rgba(20,60,120,.55)),url('https://payhip.com/cdn-cgi/image/format=auto,width=1500/https://pe56d.s3.amazonaws.com/o_1jueqbnt319jm661hemmj51osb15.png') center/cover;padding:70px 20px;display:flex;align-items:center}
+.glass{max-width:1200px;margin:auto;background:rgba(255,255,255,.16);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.3);border-radius:32px;padding:36px;color:#fff}
+h1{font-size:clamp(3rem,7vw,5rem)}
+.hero p{max-width:700px;margin:16px 0 28px}
+.btns a,.book a,.cta a{display:inline-block;text-decoration:none;padding:14px 24px;border-radius:999px;font-weight:700;margin:6px}
+.purple{background:#7b4dff;color:#fff}.gold{background:#ffb300;color:#fff}.white{background:#fff;color:#6b4dff}
+.section{max-width:1200px;margin:50px auto;padding:0 20px}
+.shelf{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px}
+.book{background:#fff;border-radius:22px;padding:18px;box-shadow:0 16px 30px rgba(0,0,0,.12);text-align:center}
+.cover{height:280px;border-radius:18px;background:linear-gradient(135deg,#7b4dff,#ff7ab6);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.3rem;font-weight:800}
+.reader{display:grid;grid-template-columns:1fr 1fr;gap:0;background:#fdf7ea;border-radius:20px;overflow:hidden;box-shadow:0 16px 30px rgba(0,0,0,.12)}
+.page{min-height:360px;padding:35px;border-right:1px solid #e6dcc7}
+.page:last-child{border-right:none}
+.controls{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:18px}
+.taggrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px}
+.tag{background:#fff;border-radius:18px;padding:18px;text-align:center;box-shadow:0 10px 20px rgba(0,0,0,.08)}
+.cta{background:linear-gradient(135deg,#6d4dff,#00c6ff);padding:45px;border-radius:28px;text-align:center;color:#fff}
+footer{text-align:center;padding:40px;color:#456}
+@media(max-width:800px){.reader{grid-template-columns:1fr}.page{border-right:none;border-bottom:1px solid #e6dcc7}}
 </style>
 </head>
 <body>
-<header>
-<div class="logo"><i data-lucide="sparkles"></i>Little Giggles</div>
-<nav>
-<a href="index.html">Home</a>
-<a href="characters.html">Characters</a>
-<a href="songs.html">Songs</a>
-<a href="sticker-club.html">Free Stickers</a>
-</nav>
-</header>
-
 <section class="hero">
-<div class="heroBox">
-<div class="tree">🌳✨</div>
-<h1>Welcome to the Story Tree</h1>
-<p>Every story is a magical adventure. Read, complete fun quests, earn badges and unlock FREE printable Little Giggles PDF eBooks.</p>
-<a class="btn" href="#quest"><i data-lucide="book-open"></i>Begin Today's Adventure</a>
+<div class="glass">
+<h1>Welcome to the Little Giggles Library</h1>
+<p>Choose a magical adventure, open a beautiful storybook and flip through every page online with Bella, Benny, Coco and Millie.</p>
+<div class="btns">
+<a class="purple" href="#">📖 Start Reading</a>
+<a class="gold" href="#">⭐ New This Week</a>
+<a class="white" href="#">🎁 Free Stories</a>
 </div>
-</section>
-
-<section class="section" id="quest">
-<div class="title">📖 Today's Story Quest</div>
-<div class="quest">
-<ul>
-<li>⭐ Read today's featured story</li>
-<li>🧩 Answer one fun question</li>
-<li>🎨 Colour your favourite character</li>
-<li>🎁 Unlock a FREE printable Little Giggles PDF eBook</li>
-</ul>
 </div>
 </section>
 
 <section class="section">
-<div class="title">Story Worlds</div>
-<div class="grid">
-<div class="card"><i data-lucide="trees"></i><h3>Forest Adventures</h3><p>Explore magical woodland tales.</p></div>
-<div class="card"><i data-lucide="castle"></i><h3>Fairy Castle</h3><p>Princesses, dragons and dreams.</p></div>
-<div class="card"><i data-lucide="train-front"></i><h3>Adventure Train</h3><p>Travel to amazing places.</p></div>
-<div class="card"><i data-lucide="ship-wheel"></i><h3>Ocean Wonders</h3><p>Meet friendly sea creatures.</p></div>
-<div class="card"><i data-lucide="rocket"></i><h3>Space Explorers</h3><p>Journey beyond the stars.</p></div>
-<div class="card"><i data-lucide="gift"></i><h3>Mystery Stories</h3><p>Unlock surprise adventures.</p></div>
+<h2>Featured Books</h2>
+<div class="shelf">
+<div class="book"><div class="cover">🐰 Bella's Rainbow Adventure</div><p>20 pages • Ages 3–5</p><a class="purple" href="#">Read Book</a></div>
+<div class="book"><div class="cover" style="background:linear-gradient(135deg,#ff8a00,#ffca3a)">🐻 Benny's Honey Hunt</div><p>22 pages • Ages 3–6</p><a class="purple" href="#">Read Book</a></div>
+<div class="book"><div class="cover" style="background:linear-gradient(135deg,#36b24a,#7fe36d)">🐊 Coco's River Rescue</div><p>18 pages • Ages 3–5</p><a class="purple" href="#">Read Book</a></div>
+<div class="book"><div class="cover" style="background:linear-gradient(135deg,#ff5fa5,#ff99d0)">🐭 Millie's Colour Party</div><p>24 pages • Ages 4–7</p><a class="purple" href="#">Read Book</a></div>
 </div>
 </section>
 
 <section class="section">
-<div class="title">Reading Journey</div>
-<div class="stats">
-<div class="rewards stat"><b>12</b>Stories Read</div>
-<div class="rewards stat"><b>7🔥</b>Day Streak</div>
-<div class="rewards stat"><b>5🏆</b>Badges</div>
-<div class="rewards stat"><b>3📚</b>PDF eBooks</div>
+<h2>Interactive Book Preview</h2>
+<div class="reader">
+<div class="page">
+<h3>Page 1</h3>
+<p>Once upon a time, Bella Bunny discovered a sparkling rainbow leading into Little Giggles Land...</p>
+</div>
+<div class="page">
+<h3>Page 2</h3>
+<p>She invited Benny, Coco and Millie to join her on a magical adventure filled with friendship and laughter.</p>
+</div>
+</div>
+<div class="controls">
+<a class="purple" href="#">⬅ Previous</a>
+<a class="gold" href="#">➡ Next</a>
+<a class="white" href="#">🔊 Read Aloud</a>
+<a class="white" href="#">🔖 Bookmark</a>
+<a class="white" href="#">🔍 Full Screen</a>
 </div>
 </section>
 
 <section class="section">
-<div class="title">🎁 Free eBook Rewards</div>
-<div class="grid">
-<div class="card"><i data-lucide="book-heart"></i><h3>Bella Bunny's Adventure</h3><p>Printable illustrated PDF.</p><a class="btn" href="#">Download</a></div>
-<div class="card"><i data-lucide="moon-star"></i><h3>Bedtime Stories</h3><p>Relaxing bedtime collection.</p><a class="btn" href="#">Download</a></div>
-<div class="card"><i data-lucide="alphabetical-sort"></i><h3>ABC Adventure</h3><p>Learn letters through stories.</p><a class="btn" href="#">Download</a></div>
+<h2>Browse by Category</h2>
+<div class="taggrid">
+<div class="tag">🌙 Bedtime Stories</div>
+<div class="tag">🌈 Adventure</div>
+<div class="tag">❤️ Friendship</div>
+<div class="tag">🦁 Animals</div>
+<div class="tag">🎄 Holidays</div>
+<div class="tag">😂 Funny Stories</div>
+<div class="tag">⭐ Kindness</div>
+<div class="tag">🎂 Birthdays</div>
 </div>
 </section>
 
-<footer>© 2026 Little Giggles • Learn • Play • Laugh • Grow</footer>
-<script>lucide.createIcons();</script>
+<section class="section">
+<div class="cta">
+<h2>Ready for Today's Adventure?</h2>
+<p>Open a book, flip the pages and discover magical learning adventures with your favourite Little Giggles friends.</p>
+<a class="white" href="stories.html">🌈 Start Exploring Free</a>
+</div>
+</section>
+
+<footer>© 2026 Little Giggles • Learn • Play • Laugh • Grow 🌈</footer>
 </body>
 </html>
