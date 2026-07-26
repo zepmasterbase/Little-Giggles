@@ -1,93 +1,78 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Little Giggles Family Hub</title>
+<title>Little Giggles • Family Hub</title>
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/lucide-static@0.542.0/font/lucide.css">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Baloo 2',sans-serif;background:linear-gradient(135deg,#79b8ff,#fff3fb);color:#233}
-.wrap{max-width:1280px;margin:auto;padding:24px}
-.glass{background:rgba(255,255,255,.75);backdrop-filter:blur(14px);border:1px solid rgba(255,255,255,.7);border-radius:24px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 22px}
-.brand{font-weight:800;font-size:1.4rem}
-.logout{display:flex;align-items:center;gap:8px;text-decoration:none;background:#ff5b6e;color:#fff;padding:10px 18px;border-radius:999px}
-.hero{padding:42px;text-align:center;margin:24px 0}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
-.card{padding:22px}
-.progress{height:12px;background:#ddd;border-radius:999px;overflow:hidden;margin:10px 0}
-.progress span{display:block;height:100%;width:72%;background:linear-gradient(90deg,#6d5cff,#ff6fb6)}
-ul{padding-left:18px}
-footer{text-align:center;padding:30px;color:#555}
+body{font-family:'Baloo 2',sans-serif;background:linear-gradient(#6dcfff,#dff8ff,#95df78);color:#20344a}
+.hero{min-height:60vh;background:linear-gradient(rgba(15,35,90,.45),rgba(15,35,90,.6)),url('https://payhip.com/cdn-cgi/image/format=auto,width=1500/https://pe56d.s3.amazonaws.com/o_1jueqbnt319jm661hemmj51osb15.png') center/cover no-repeat;display:flex;align-items:center;padding:24px}
+.glass{max-width:1200px;margin:auto;background:rgba(255,255,255,.15);backdrop-filter:blur(18px);border-radius:30px;padding:36px;border:1px solid rgba(255,255,255,.3);color:#fff}
+h1{font-size:clamp(3rem,7vw,5rem)}
+.wrap{max-width:1200px;margin:50px auto;padding:0 20px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;margin-top:24px}
+.card{background:#fff;border-radius:22px;padding:20px;box-shadow:0 10px 25px rgba(0,0,0,.08)}
+.progress{height:12px;background:#ddd;border-radius:999px;overflow:hidden;margin:12px 0}
+.progress span{display:block;width:68%;height:100%;background:linear-gradient(90deg,#7b4dff,#ff7ab6)}
+.btn{display:inline-block;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:700;margin:6px;background:#fff;color:#6b4dff}
+.logout{background:#ff5f5f;color:#fff}
+.footercta{background:linear-gradient(135deg,#6d4dff,#00c6ff);border-radius:28px;padding:40px;text-align:center;color:#fff;margin-top:40px}
+footer{text-align:center;padding:40px}
+pre{background:#1f2940;color:#fff;padding:16px;border-radius:16px;overflow:auto}
 </style>
 </head>
 <body>
-<div class="wrap">
-<nav class="glass">
-<div class="brand">🌈 Little Giggles Family Hub</div>
-<a href="#" class="logout" onclick="logout(event)">
-<i class="icon-log-out"></i> Logout
-</a>
-</nav>
 
-<section class="glass hero">
-<h1>Welcome Back! 👋</h1>
-<p>Manage your family's stories, songs, stickers and learning journey.</p>
+<section class="hero">
+<div class="glass">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap">
+<div>
+<h1>Welcome Back 👋</h1>
+<p>Your Family Hub keeps all your stories, songs, stickers and activities together.</p>
+<a class="btn" href="stories.html">📚 Stories</a>
+<a class="btn" href="music.html">🎵 Songs</a>
+<a class="btn" href="stickers.html">⭐ Stickers</a>
+</div>
+<a class="btn logout" href="index.html">⎋ Logout</a>
+</div>
+</div>
 </section>
 
+<div class="wrap">
+<h2>Today's Learning</h2>
 <div class="grid">
-<div class="glass card">
-<h3>📖 Continue Reading</h3>
-<p>Bella's Rainbow Adventure</p>
-</div>
-<div class="glass card">
-<h3>🎵 Continue Watching</h3>
-<p>Counting Song</p>
-</div>
-<div class="glass card">
-<h3>🎁 Today's Reward</h3>
-<p>Free Sticker Pack</p>
-</div>
-<div class="glass card">
-<h3>🏆 Weekly Progress</h3>
-<div class="progress"><span></span></div>
-<p>72% Complete</p>
+<div class="card"><h3>📖 Continue Story</h3><p>Bella's Rainbow Adventure</p></div>
+<div class="card"><h3>🎵 Continue Song</h3><p>Good Morning Song</p></div>
+<div class="card"><h3>🎁 Today's Reward</h3><p>Claim your free sticker pack.</p></div>
+<div class="card"><h3>🏆 Weekly Progress</h3><div class="progress"><span></span></div><p>68% complete</p></div>
 </div>
 
-<div class="glass card">
-<h3>⭐ Sticker Collection</h3>
-<ul><li>Bella Bunny</li><li>Benny Bear</li><li>Coco Crocodile</li><li>Millie Mouse</li></ul>
+<h2 style="margin-top:40px">Family Library</h2>
+<div class="grid">
+<div class="card"><h3>⭐ Sticker Collection</h3><p>24 packs collected</p></div>
+<div class="card"><h3>📥 Downloads</h3><p>Sticker packs, colouring pages and activities.</p></div>
+<div class="card"><h3>❤️ Favourites</h3><p>Quick access to saved content.</p></div>
+<div class="card"><h3>👨‍👩‍👧 Parent Corner</h3><p>Learning tips and account settings.</p></div>
 </div>
 
-<div class="glass card">
-<h3>📥 Downloads</h3>
-<ul><li>Sticker Packs</li><li>Colouring Pages</li><li>Activity Sheets</li></ul>
-</div>
+<div class="footercta">
+<h2>Supabase Integration Placeholder</h2>
+<p>Replace the placeholders below when you connect your backend.</p>
+<pre>const SUPABASE_URL = "YOUR_SUPABASE_URL";
+const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_KEY";
 
-<div class="glass card">
-<h3>❤️ Favourites</h3>
-<ul><li>Stories</li><li>Songs</li><li>Games</li></ul>
-</div>
-
-<div class="glass card">
-<h3>👨‍👩‍👧 Parent Corner</h3>
-<ul><li>Learning Tips</li><li>Monthly Newsletter</li><li>Account Settings</li></ul>
+// Initialize Supabase here
+// Load parent profile
+// Load child profiles
+// Load downloads
+// Handle logout
+</pre>
 </div>
 </div>
 
-<footer>© Little Giggles • Learn • Play • Laugh • Grow 🌈</footer>
-</div>
+<footer>© 2026 Little Giggles • Learn • Play • Laugh • Grow 🌈</footer>
 
-<script>
-function logout(e){
- e.preventDefault();
- localStorage.removeItem("lgSignedIn");
- // Replace with Supabase signOut() when connected.
- window.location.href="index.html";
-}
-</script>
 </body>
 </html>
