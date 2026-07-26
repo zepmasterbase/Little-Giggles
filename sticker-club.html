@@ -8,75 +8,79 @@
 <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Baloo 2',sans-serif;background:linear-gradient(#79d7ff,#eefcff,#a5e88c);color:#233}
-.hero{min-height:70vh;background:linear-gradient(rgba(31,53,110,.45),rgba(31,53,110,.6)),url('https://payhip.com/cdn-cgi/image/format=auto,width=1500/https://pe56d.s3.amazonaws.com/o_1jueqbnt319jm661hemmj51osb15.png') center/cover;display:flex;align-items:center;padding:24px}
-.glass{max-width:1200px;margin:auto;background:rgba(255,255,255,.18);backdrop-filter:blur(18px);padding:38px;border-radius:30px;border:1px solid rgba(255,255,255,.35);color:#fff}
+body{font-family:'Baloo 2',sans-serif;background:linear-gradient(#73d4ff,#eefcff,#a5e37e);color:#21354a}
+.hero{min-height:70vh;background:linear-gradient(rgba(26,43,110,.45),rgba(26,43,110,.6)),url('https://payhip.com/cdn-cgi/image/format=auto,width=1500/https://pe56d.s3.amazonaws.com/o_1jueqbnt319jm661hemmj51osb15.png') center/cover;padding:30px;display:flex;align-items:center}
+.glass{max-width:1200px;margin:auto;background:rgba(255,255,255,.16);backdrop-filter:blur(18px);border:1px solid rgba(255,255,255,.3);border-radius:30px;padding:40px;color:#fff}
 h1{font-size:clamp(3rem,7vw,5rem)}
-.btn{display:inline-block;text-decoration:none;padding:15px 28px;border-radius:999px;font-weight:700;margin-top:18px;background:#fff;color:#6a46ff}
+.btn{display:inline-block;padding:14px 24px;border-radius:999px;text-decoration:none;font-weight:700;margin:8px}
+.primary{background:#7b4dff;color:#fff}.secondary{background:#fff;color:#6d4dff}
 .wrap{max-width:1200px;margin:45px auto;padding:0 20px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
-.card{background:#fff;border-radius:22px;padding:18px;box-shadow:0 12px 28px rgba(0,0,0,.1)}
-.preview{height:180px;border-radius:16px;background:linear-gradient(135deg,#7b4dff,#ff6fb0);display:flex;align-items:center;justify-content:center;color:#fff;font-size:1.2rem;font-weight:700}
-.download{display:inline-block;margin-top:12px;background:#7b4dff;color:#fff;text-decoration:none;padding:12px 18px;border-radius:999px}
-.signup{margin:50px 0;background:#fff;border-radius:28px;padding:30px;box-shadow:0 14px 30px rgba(0,0,0,.1)}
-form{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-input,select{padding:14px;border-radius:12px;border:1px solid #ccc;font-family:inherit}
-label{display:block;margin-top:10px}
-.join{margin-top:20px;background:linear-gradient(135deg,#6d4dff,#00c8ff);color:#fff;border:none;padding:16px 24px;border-radius:999px;font-size:1rem}
-.benefits{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-top:24px}
-.box{background:#fdfdfd;border-radius:18px;padding:18px;box-shadow:0 8px 18px rgba(0,0,0,.08)}
-.cta{margin:50px 0;padding:45px;border-radius:28px;background:linear-gradient(135deg,#6d4dff,#00c6ff);text-align:center;color:#fff}
-footer{text-align:center;padding:35px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:22px}
+.card{background:#fff;border-radius:24px;padding:18px;box-shadow:0 12px 28px rgba(0,0,0,.1)}
+.card img{width:100%;border-radius:18px}
+.lock{display:inline-block;background:#ffefef;color:#b00020;padding:8px 14px;border-radius:999px;font-weight:700;margin-top:12px}
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-bottom:35px}
+.feature{background:#fff;padding:22px;border-radius:20px;text-align:center;box-shadow:0 10px 22px rgba(0,0,0,.08)}
+.signup{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin-top:40px}
+.panel{background:#fff;border-radius:24px;padding:28px;box-shadow:0 12px 28px rgba(0,0,0,.1)}
+input,select{width:100%;padding:14px;margin:8px 0 16px;border-radius:12px;border:1px solid #ddd;font-family:inherit}
+button{width:100%;padding:16px;border:none;border-radius:999px;background:#7b4dff;color:#fff;font-size:1rem;font-weight:700;cursor:pointer}
+.flow{background:#f7f7ff;border-radius:18px;padding:16px}
+footer{text-align:center;padding:40px}
+@media(max-width:900px){.signup{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <section class="hero">
 <div class="glass">
-<h1>🎁 Little Giggles Sticker Club</h1>
-<p>Join free to unlock printable sticker packs featuring Bella, Benny, Coco and Millie. New packs arrive every month.</p>
-<a class="btn" href="#signup">✨ Join Free & Download</a>
+<h1>🌈 Little Giggles Sticker Club</h1>
+<p>Join for free to unlock printable sticker packs featuring Bella, Benny, Coco and Millie. Build your free collection today and receive new sticker packs as they're released.</p>
+<a class="btn primary" href="#signup">Join Free</a>
+<a class="btn secondary" href="#packs">View Sticker Packs</a>
 </div>
 </section>
 
 <div class="wrap">
-<h2>Featured Sticker Packs</h2>
-<div class="grid">
-<div class="card"><div class="preview">🐰 Bella Bunny Pack</div><p>20 printable stickers • PDF + PNG</p><a class="download" href="#signup">Download Free</a></div>
-<div class="card"><div class="preview">🐻 Benny Bear Pack</div><p>20 printable stickers • PDF + PNG</p><a class="download" href="#signup">Download Free</a></div>
-<div class="card"><div class="preview">🐊 Coco Pack</div><p>20 printable stickers • PDF + PNG</p><a class="download" href="#signup">Download Free</a></div>
-<div class="card"><div class="preview">🐭 Millie Pack</div><p>20 printable stickers • PDF + PNG</p><a class="download" href="#signup">Download Free</a></div>
-<div class="card"><div class="preview">🌈 Rainbow Rewards</div><p>Gold stars & rewards</p><a class="download" href="#signup">Download Free</a></div>
-<div class="card"><div class="preview">🎄 Holiday Pack</div><p>Seasonal fun stickers</p><a class="download" href="#signup">Download Free</a></div>
+<div class="features">
+<div class="feature"><h3>🆓 Free to Join</h3><p>Create an account to unlock free sticker downloads.</p></div>
+<div class="feature"><h3>🖨️ Printable PDFs</h3><p>Perfect for home, classrooms and reward charts.</p></div>
+<div class="feature"><h3>🎁 New Every Month</h3><p>Fresh sticker packs added regularly.</p></div>
+</div>
+
+<h2 id="packs">Featured Sticker Packs</h2>
+<div class="cards">
+<div class="card"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsmg1boemh17lgqbu1rmp1tkh15.png"><h3>Bella Bunny Pack</h3><p>40 printable stickers.</p><span class="lock">🔒 Join Free to Download</span></div>
+<div class="card"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtsktb8916f4tuo1q66da3rq1n.png"><h3>Benny Bear Pack</h3><p>Adventure collection.</p><span class="lock">🔒 Join Free to Download</span></div>
+<div class="card"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskpdtbs35blmp8516id1gmg1b.png"><h3>Coco Crocodile Pack</h3><p>Nature collection.</p><span class="lock">🔒 Join Free to Download</span></div>
+<div class="card"><img src="https://payhip.com/cdn-cgi/image/format=auto/https://pe56d.s3.amazonaws.com/o_1jtskorim1gj51s4ce6nfaq1vr15.png"><h3>Millie Mouse Pack</h3><p>Creative fun.</p><span class="lock">🔒 Join Free to Download</span></div>
 </div>
 
 <div class="signup" id="signup">
-<h2>Join the Sticker Club</h2>
-<p>Complete the form below to receive instant access to your free sticker pack and future printable activities.</p>
-<form>
-<input placeholder="Parent's first name">
-<input type="email" placeholder="Email address">
-<select><option>Child's age (optional)</option><option>3-4</option><option>5-6</option><option>7-8</option></select>
-<select><option>Country (optional)</option><option>South Africa</option><option>Other</option></select>
-</form>
-<label><input type="checkbox"> I'd like to receive free stories, songs, activities and new sticker pack updates.</label><br>
-<button class="join">🎁 Join & Download</button>
+<div class="panel">
+<h2>Create Your Free Parent Account</h2>
+<p>Connect this form to your existing Supabase authentication and profiles tables.</p>
+<input placeholder="Parent's Name">
+<input type="email" placeholder="Email Address">
+<input placeholder="Child's First Name (optional)">
+<select><option>Child's Age Range</option><option>3–4</option><option>5–6</option><option>7–8</option></select>
+<input placeholder="Country (optional)">
+<button>Create Free Account & Unlock Stickers</button>
 </div>
 
-<h2>Why Parents Love the Sticker Club</h2>
-<div class="benefits">
-<div class="box">📥 Free printable sticker packs every month.</div>
-<div class="box">📚 Early access to new stories.</div>
-<div class="box">🎵 New songs and nursery rhymes.</div>
-<div class="box">🎨 Printable crafts and learning activities.</div>
+<div class="panel">
+<h2>After Sign-up</h2>
+<div class="flow">
+<p>✅ Supabase account created</p>
+<p>✅ Parent profile saved</p>
+<p>✅ Sticker downloads unlocked</p>
+<p>✅ Download history tracked</p>
+<p>✅ Email updates for new stories, songs and stickers</p>
+<p>⭐ Ready for future premium sticker packs</p>
 </div>
-
-<div class="cta">
-<h2>Ready to Start Collecting?</h2>
-<p>Join the Little Giggles Sticker Club and unlock your first free download today.</p>
-<a class="btn" href="#signup">🌈 Join Free & Download</a>
+</div>
 </div>
 </div>
 
-<footer>© 2026 Little Giggles • Learn • Play • Laugh • Grow 🌈</footer>
+<footer>© 2026 Little Giggles Sticker Club • Learn • Play • Laugh • Grow 🌈</footer>
 </body>
 </html>
