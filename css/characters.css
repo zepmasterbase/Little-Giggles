@@ -1,0 +1,190 @@
+/* Little Giggles - characters.css */
+:root{
+  --bg:#09152f;
+  --glass:rgba(255,255,255,.12);
+  --glass-strong:rgba(255,255,255,.18);
+  --border:rgba(255,255,255,.18);
+  --text:#ffffff;
+  --pink:#ff67c8;
+  --purple:#7b6dff;
+  --cyan:#73f4ff;
+  --shadow:0 20px 40px rgba(0,0,0,.25);
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  font-family:"Poppins",sans-serif;
+  color:var(--text);
+  background:linear-gradient(180deg,#081022,#0d1d45);
+  overflow-x:hidden;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  opacity:.25;
+  background-image:
+    radial-gradient(circle,#fff 1px,transparent 2px);
+  background-size:90px 90px;
+  animation:stars 35s linear infinite;
+}
+
+@keyframes stars{
+  from{transform:translateY(-120px)}
+  to{transform:translateY(120px)}
+}
+
+header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:16px 5%;
+  backdrop-filter:blur(18px);
+  background:rgba(8,16,34,.7);
+  border-bottom:1px solid var(--border);
+}
+
+header nav{
+  display:flex;
+  gap:18px;
+  flex-wrap:wrap;
+}
+
+header a{
+  color:#fff;
+  text-decoration:none;
+  transition:.25s;
+}
+
+header a:hover{
+  color:var(--cyan);
+}
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:40px;
+  background:
+  linear-gradient(rgba(8,16,34,.35),rgba(8,16,34,.65)),
+  url("../assets/characters-bg.jpg") center/cover no-repeat;
+}
+
+.hero-card{
+  width:min(960px,100%);
+  padding:48px;
+  text-align:center;
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:30px;
+  backdrop-filter:blur(20px);
+  box-shadow:var(--shadow);
+}
+
+.hero-card h1{
+  font-family:"Fredoka",sans-serif;
+  font-size:clamp(2.8rem,6vw,5rem);
+  margin-bottom:18px;
+}
+
+.hero-card p{
+  max-width:720px;
+  margin:auto;
+  line-height:1.8;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:24px;
+  padding:14px 28px;
+  border-radius:999px;
+  color:#fff;
+  text-decoration:none;
+  background:linear-gradient(90deg,var(--pink),var(--purple));
+  transition:.3s;
+}
+
+.btn:hover{
+  transform:translateY(-4px);
+  box-shadow:0 10px 24px rgba(255,102,200,.35);
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:24px;
+  padding:70px 5%;
+}
+
+.card{
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:28px;
+  text-align:center;
+  transition:.35s;
+  backdrop-filter:blur(16px);
+}
+
+.card:hover{
+  transform:translateY(-8px) scale(1.02);
+  background:var(--glass-strong);
+}
+
+.emoji{
+  font-size:72px;
+  margin-bottom:12px;
+  animation:bob 3s ease-in-out infinite;
+}
+
+@keyframes bob{
+  50%{transform:translateY(-10px)}
+}
+
+.section{
+  padding:70px 5%;
+}
+
+.section h2{
+  font-family:"Fredoka",sans-serif;
+  text-align:center;
+  margin-bottom:24px;
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:20px;
+}
+
+.stat{
+  background:var(--glass);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:24px;
+  text-align:center;
+}
+
+footer{
+  padding:32px;
+  text-align:center;
+  border-top:1px solid var(--border);
+  background:#081022;
+}
+
+@media (max-width:768px){
+  header{
+    flex-direction:column;
+    gap:12px;
+  }
+  .hero-card{
+    padding:32px 22px;
+  }
+}
